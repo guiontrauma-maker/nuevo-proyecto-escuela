@@ -535,6 +535,8 @@ function ContactSection() {
   );
 }
 
+
+
 function Footer() {
   return (
     <footer className="site-footer">
@@ -542,8 +544,13 @@ function Footer() {
         <div className="footer-brand">
           <LogoPlaceholder />
           <p>
-            Orientación cercana para explorar alternativas relacionadas
-            con tus activos.
+            Somos una consultoría privada. No somos autoridad ni
+            estamos afiliados a ninguna autoridad, institución o banco.
+            No prometemos resultados: cada caso se evalúa por separado
+            y te explicamos con claridad si conviene continuar.
+            <br />
+            <br />
+            Lunes a viernes de 9:00 a 19:00, hora de la Ciudad de México.
           </p>
         </div>
 
@@ -553,6 +560,8 @@ function Footer() {
           <a href="#servicios">Servicios</a>
           <a href="#proceso">Cómo funciona</a>
           <a href="#contacto">Contacto</a>
+          <a href="/aviso-de-privacidad">Aviso de privacidad</a>
+          <a href="/terminos-y-condiciones">Términos y condiciones</a>
         </div>
 
         <div className="footer-contact">
@@ -565,12 +574,16 @@ function Footer() {
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} Ruta Capital. Todos los derechos reservados.</span>
+        <span>
+          © {new Date().getFullYear()} Ruta Capital. Todos los derechos reservados.
+        </span>
         <a href="#inicio">Volver al inicio ↑</a>
       </div>
     </footer>
   );
 }
+
+
 
 export default function App() {
   return (
