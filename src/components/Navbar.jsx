@@ -8,9 +8,6 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   const path = window.location.pathname.replace(/\/+$/, "") || "/";
-  const isServicesActive =
-    (path === "/" || path === "") &&
-    window.location.hash === "#servicios";
 
   return (
     <header className="site-header">
@@ -61,9 +58,9 @@ export default function Navbar() {
           </a>
 
           <a
-            href="/#servicios"
+            href="/servicios"
             onClick={closeMenu}
-            aria-current={isServicesActive ? "location" : undefined}
+            aria-current={path === "/servicios" ? "page" : undefined}
           >
             Servicios
           </a>

@@ -1,16 +1,23 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+
 import App from "./App.jsx";
+import Servicios from "./pages/Servicios.jsx";
 import Preguntas from "./pages/Preguntas.jsx";
 import Diagnostico from "./pages/Diagnostico.jsx";
 import AvisoPrivacidad from "./pages/AvisoPrivacidad.jsx";
 import TerminosCondiciones from "./pages/TerminosCondiciones.jsx";
+
 import "./index.css";
 
 const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
 function getPage() {
+  if (path === "/servicios") {
+    return <Servicios />;
+  }
+
   if (path === "/preguntas") {
     return <Preguntas />;
   }
