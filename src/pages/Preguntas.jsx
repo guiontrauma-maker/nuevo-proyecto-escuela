@@ -214,6 +214,103 @@ function ConsultationForm() {
   );
 }
 
+
+function HonorariosSection() {
+  return (
+    <section className="honorarios-section" id="honorarios">
+      <div className="questions-container">
+        <div className="honorarios-heading">
+          <span className="questions-eyebrow">
+            <span className="honorarios-dot" />
+            HONORARIOS Y TRANSPARENCIA
+          </span>
+
+          <h2>
+            Qué hacemos,
+            <br />
+            <span>cuánto cuesta</span> y cómo trabajamos.
+          </h2>
+
+          <p>
+            Queremos que comprendas el servicio, sus condiciones y
+            los posibles costos antes de tomar una decisión.
+          </p>
+        </div>
+
+        <div className="honorarios-grid">
+          <article className="honorarios-card">
+            <span className="honorarios-card-icon" aria-hidden="true">
+              ◇
+            </span>
+
+            <h3>Qué hacemos</h3>
+
+            <p>
+              Somos un servicio de orientación y acompañamiento.
+              Revisamos la información que nos compartas para ayudarte
+              a comprender tu situación y explorar alternativas
+              relacionadas con posibles fraudes o fondos no recuperados.
+            </p>
+
+            <div className="honorarios-card-note">
+              Cada caso requiere una valoración particular.
+            </div>
+          </article>
+
+          <article className="honorarios-card">
+            <span className="honorarios-card-icon" aria-hidden="true">
+              $
+            </span>
+
+            <h3>Qué cuesta</h3>
+
+            <p>
+              El costo depende del servicio que se requiera y de las
+              características del caso. Antes de contratar, te
+              explicaremos los honorarios aplicables, qué incluyen
+              y cuáles son las condiciones de pago.
+            </p>
+
+            <div className="honorarios-card-note">
+              No avances con un servicio sin conocer sus condiciones.
+            </div>
+          </article>
+
+          <article className="honorarios-card">
+            <span className="honorarios-card-icon" aria-hidden="true">
+              ✓
+            </span>
+
+            <h3>Quién responde</h3>
+
+            <p>
+              Te explicaremos el alcance del servicio, las gestiones
+              que podemos realizar y sus limitaciones. Si tu situación
+              requiere atención legal o de otra entidad especializada,
+              te lo comunicaremos.
+            </p>
+
+            <div className="honorarios-card-note">
+              Información clara, sin promesas de resultados.
+            </div>
+          </article>
+        </div>
+
+        <div className="honorarios-disclaimer">
+          <span aria-hidden="true">✳</span>
+          <p>
+            <strong>Importante:</strong> la recuperación del dinero
+            no está garantizada. El resultado depende de las
+            circunstancias de cada caso y de las vías disponibles.
+            Desconfía de quien te asegure recuperar tus fondos.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 export default function Preguntas() {
   const [activeQuestion, setActiveQuestion] = useState(0);
 
@@ -250,12 +347,7 @@ export default function Preguntas() {
             </a>
           </div>
 
-          <div className="questions-hero-decoration" aria-hidden="true">
-            <span className="questions-ring ring-one" />
-            <span className="questions-ring ring-two" />
-            <span className="questions-ring ring-three" />
-            <span className="questions-star">✳</span>
-          </div>
+    
         </section>
 
         <section
@@ -299,7 +391,7 @@ export default function Preguntas() {
             </div>
           </div>
         </section>
-
+       <HonorariosSection />
         <section className="questions-contact-section" id="consulta">
           <div className="questions-container questions-contact-grid">
             <div className="questions-contact-copy">

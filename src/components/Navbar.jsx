@@ -7,6 +7,8 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+
   return (
     <header className="site-header">
       <div className="navbar-inner">
@@ -18,7 +20,7 @@ export default function Navbar() {
         >
           <span
             className="brand-mark logo-placeholder"
-            aria-label="Espacio reservado para el logo"
+            aria-hidden="true"
           >
             <span />
             <span />
@@ -36,31 +38,47 @@ export default function Navbar() {
           type="button"
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={menuOpen}
+          aria-controls="main-navigation"
           onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? "✕" : "☰"}
         </button>
 
-        <nav className={`main-nav ${menuOpen ? "is-open" : ""}`}>
-          <a href="/" onClick={closeMenu}>
+        <nav
+          id="main-navigation"
+          className={`main-nav ${menuOpen ? "is-open" : ""}`}
+          aria-label="Navegación principal"
+        >
+          <a
+            href="/"
+            onClick={closeMenu}
+            aria-current={path === "/" ? "page" : undefined}
+          >
             Inicio
           </a>
+
+          <a
+            href="/servicios"
+            onClick={closeMenu}
+            aria-current={path === "/servicios" ? "page" : undefined}
+          >
+            Servicios
+          </a>
+
           <a
             href="/preguntas"
             onClick={closeMenu}
-            aria-current={
-              window.location.pathname.replace(/\/+$/, "") === "/preguntas"
-                ? "page"
-                : undefined
-            }
+            aria-current={path === "/preguntas" ? "page" : undefined}
           >
             Preguntas
           </a>
-          <a href="/#servicios" onClick={closeMenu}>
-            Servicios
-          </a>
-          <a href="/#contacto" onClick={closeMenu}>
-            Contacto
+
+          <a
+            href="/diagnostico"
+            onClick={closeMenu}
+            aria-current={path === "/diagnostico" ? "page" : undefined}
+          >
+            Diagnóstico
           </a>
         </nav>
       </div>

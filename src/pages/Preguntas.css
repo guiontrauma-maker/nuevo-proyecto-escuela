@@ -18,6 +18,7 @@
   margin-inline: auto;
 }
 
+
 .questions-hero {
   position: relative;
   isolation: isolate;
@@ -26,9 +27,21 @@
   align-items: center;
   overflow: hidden;
   padding: 82px 0 92px;
-  background:
-    radial-gradient(circle at 85% 38%, rgba(242, 207, 210, 0.7), transparent 29%),
-    linear-gradient(115deg, #faf7f4 15%, #f7eee9 100%);
+
+  background-color: #FAF7F4;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(250, 247, 244, 0.97) 0%,
+      rgba(250, 247, 244, 0.90) 38%,
+      rgba(250, 247, 244, 0.35) 67%,
+      rgba(250, 247, 244, 0.10) 100%
+    ),
+    url("/images/ruta-capital-hero-preguntas.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .questions-hero-content {
@@ -703,3 +716,223 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================
+   HONORARIOS
+======================================== */
+
+.honorarios-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(236, 156, 157, 0.14),
+      transparent 32%
+    ),
+    #FAF7F4;
+}
+
+.honorarios-heading {
+  max-width: 790px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.honorarios-heading .questions-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.honorarios-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #EC9C9D;
+  box-shadow: 0 0 0 5px rgba(236, 156, 157, 0.15);
+}
+
+.honorarios-heading h2 {
+  margin: 24px 0 18px;
+  color: #443025;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.honorarios-heading h2 span {
+  color: #AA7F66;
+  font-style: italic;
+}
+
+.honorarios-heading > p {
+  max-width: 580px;
+  margin: 0 auto;
+  color: #6D5B50;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.honorarios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.honorarios-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border: 1px solid rgba(68, 48, 37, 0.09);
+  border-radius: 17px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 32px rgba(68, 48, 37, 0.045);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.honorarios-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(170, 127, 102, 0.35);
+  box-shadow: 0 18px 38px rgba(68, 48, 37, 0.09);
+}
+
+.honorarios-card-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 13px;
+  background: #F2CFD2;
+  color: #443025;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+}
+
+.honorarios-card h3 {
+  margin: 0 0 14px;
+  color: #443025;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+.honorarios-card > p {
+  margin: 0;
+  color: #66564B;
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+.honorarios-card-note {
+  width: 100%;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #F0E8E2;
+  color: #7F5836;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.8;
+}
+
+.honorarios-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 25px;
+  padding: 22px 24px;
+  border: 1px solid rgba(170, 127, 102, 0.2);
+  border-radius: 13px;
+  background: rgba(242, 207, 210, 0.2);
+}
+
+.honorarios-disclaimer > span {
+  flex-shrink: 0;
+  color: #7F5836;
+  font-size: 21px;
+}
+
+.honorarios-disclaimer p {
+  margin: 0;
+  color: #5F4B40;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.honorarios-disclaimer strong {
+  color: #443025;
+}
+
+/* TABLETAS Y MÓVILES */
+
+@media (max-width: 620px) {
+  .honorarios-section {
+    padding: 72px 0 65px;
+  }
+
+  .honorarios-heading {
+    margin-bottom: 30px;
+  }
+
+  .honorarios-heading h2 {
+    margin-top: 20px;
+    font-size: clamp(37px, 9.5vw, 48px);
+    line-height: 1.12;
+  }
+
+  .honorarios-heading > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .honorarios-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .honorarios-card {
+    padding: 23px;
+    border-radius: 15px;
+  }
+
+  .honorarios-card-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 17px;
+  }
+
+  .honorarios-card h3 {
+    font-size: 19px;
+  }
+
+  .honorarios-card > p {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+
+  .honorarios-disclaimer {
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .honorarios-disclaimer p {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .honorarios-card {
+    transition: none;
+  }
+}
+

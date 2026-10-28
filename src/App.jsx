@@ -30,26 +30,34 @@ const services = [
   },
 ];
 
+
 const steps = [
   {
-    icon: "💬",
-    title: "Cuéntanos tu situación",
+    number: "01",
+    title: "Evaluación inicial",
     description:
-      "Comparte los detalles iniciales para que podamos comprender lo que necesitas.",
+      "Conocemos tu situación y los detalles generales para comprender qué ocurrió.",
   },
   {
-    icon: "🔍",
-    title: "Revisamos la información",
+    number: "02",
+    title: "Revisión de la información",
     description:
-      "Un asesor revisará los datos que nos compartas y te explicará las opciones que se puedan explorar.",
+      "Revisamos los datos y documentos disponibles para identificar aspectos relevantes de tu caso.",
   },
   {
-    icon: "🧭",
-    title: "Conoce tus alternativas",
+    number: "03",
+    title: "Alternativas para tu caso",
     description:
-      "Recibe orientación sobre los posibles siguientes pasos, de acuerdo con tu situación.",
+      "Te explicamos las opciones que podrían explorarse, sus limitaciones y los siguientes pasos.",
+  },
+  {
+    number: "04",
+    title: "Acompañamiento y seguimiento",
+    description:
+      "Te orientamos durante las gestiones acordadas, sin garantizar la recuperación de los fondos.",
   },
 ];
+
 
 function LogoPlaceholder() {
   return (
@@ -263,42 +271,64 @@ function ServicesSection() {
   );
 }
 
+
 function ProcessSection() {
   return (
     <section className="process-section section-anchor" id="proceso">
       <div className="container process-layout">
         <div className="process-intro">
-          <span className="eyebrow">UN CAMINO CLARO</span>
+          <span className="eyebrow">
+            <span className="process-eyebrow-dot" />
+            CÓMO TRABAJAMOS
+          </span>
+
           <h2>
-            Empecemos
+            Un proceso claro,
             <br />
-            por escucharte<span className="heading-accent">.</span>
+            <span>paso a paso.</span>
           </h2>
+
           <p>
-            No necesitas tener todas las respuestas desde el inicio.
-            Comparte lo que sabes y te orientaremos sobre cómo continuar.
+            Sabemos que enfrentar una posible estafa puede generar
+            incertidumbre. Por eso, te explicamos cada etapa con
+            claridad para que puedas tomar decisiones informadas.
           </p>
-          <a className="button button-dark" href="#contacto">
-            Iniciar conversación <span>↗</span>
-          </a>
         </div>
 
         <div className="process-list">
           {steps.map((step) => (
-            <article className="process-item" key={step.title}>
-              <div className="process-icon">{step.icon}</div>
-              <div>
+            <article className="process-item" key={step.number}>
+              <div className="process-number">
+                {step.number}
+              </div>
+
+              <div className="process-item-copy">
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
-              <span className="process-chevron">↗</span>
+
+              <span className="process-chevron" aria-hidden="true">
+                ↗
+              </span>
             </article>
           ))}
+        </div>
+
+        <div className="process-action">
+          <a className="process-action-button" href="#contacto">
+            Comenzar con la evaluación <span>↗</span>
+          </a>
+
+          <p>
+            Cada caso es diferente. La evaluación no garantiza la
+            recuperación del dinero.
+          </p>
         </div>
       </div>
     </section>
   );
 }
+
 
 function ContactSection() {
   const [form, setForm] = useState({
