@@ -10,8 +10,16 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <div className="navbar-inner">
-        <a className="brand" href="#inicio" onClick={closeMenu} aria-label="Ruta Capital, inicio">
-          <span className="brand-mark logo-placeholder" aria-label="Espacio reservado para el logo">
+        <a
+          className="brand"
+          href="/"
+          onClick={closeMenu}
+          aria-label="Ruta Capital, inicio"
+        >
+          <span
+            className="brand-mark logo-placeholder"
+            aria-label="Espacio reservado para el logo"
+          >
             <span />
             <span />
             <span />
@@ -34,10 +42,26 @@ export default function Navbar() {
         </button>
 
         <nav className={`main-nav ${menuOpen ? "is-open" : ""}`}>
-          <a href="#inicio" onClick={closeMenu}>Inicio</a>
-          <a href="#preguntas" onClick={closeMenu}>Preguntas</a>
-          <a href="#servicios" onClick={closeMenu}>Servicios</a>
-          <a href="#contacto" onClick={closeMenu}>Contacto</a>
+          <a href="/" onClick={closeMenu}>
+            Inicio
+          </a>
+          <a
+            href="/preguntas"
+            onClick={closeMenu}
+            aria-current={
+              window.location.pathname.replace(/\/+$/, "") === "/preguntas"
+                ? "page"
+                : undefined
+            }
+          >
+            Preguntas
+          </a>
+          <a href="/#servicios" onClick={closeMenu}>
+            Servicios
+          </a>
+          <a href="/#contacto" onClick={closeMenu}>
+            Contacto
+          </a>
         </nav>
       </div>
     </header>
