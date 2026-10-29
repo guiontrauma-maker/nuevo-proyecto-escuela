@@ -1017,3 +1017,404 @@
     transition: none;
   }
 }
+
+/* ========================================
+   RUTA CAPITAL — TIPOGRAFÍA MÁS GRANDE
+   Preguntas, contacto y honorarios
+======================================== */
+
+/* Aprovechar mejor el ancho de pantalla */
+.questions-container {
+  width: min(1320px, calc(100% - 80px));
+}
+
+/* Encabezado principal */
+.questions-eyebrow {
+  font-size: 14px;
+}
+
+.questions-hero h1 {
+  max-width: 850px;
+  font-size: clamp(54px, 6vw, 82px);
+}
+
+.questions-hero-content > p {
+  max-width: 720px;
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.questions-hero-link {
+  font-size: 17px;
+}
+
+/* Sección de preguntas */
+.questions-content-section {
+  padding: 100px 0;
+}
+
+.questions-content-grid {
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(45px, 6vw, 100px);
+}
+
+.questions-sidebar h2 {
+  font-size: clamp(38px, 3.5vw, 52px);
+}
+
+.questions-sidebar > p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.questions-sidebar-note {
+  padding: 24px;
+}
+
+.questions-sidebar-note p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.questions-trigger {
+  padding: 27px 0;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.questions-symbol {
+  flex-basis: 38px;
+  width: 38px;
+  height: 38px;
+  font-size: 25px;
+}
+
+.questions-answer {
+  margin: 0 48px 28px 0;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* Contacto */
+.questions-contact-section {
+  padding: 100px 0;
+}
+
+.questions-contact-grid {
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(40px, 6vw, 90px);
+}
+
+.questions-contact-copy h2 {
+  font-size: clamp(40px, 4vw, 58px);
+}
+
+.questions-contact-copy > p {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.questions-contact-promise {
+  max-width: 100%;
+  padding: 24px;
+}
+
+.questions-contact-promise strong {
+  font-size: 17px;
+}
+
+.questions-contact-promise p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Formulario */
+.questions-form {
+  padding: clamp(30px, 4vw, 52px);
+}
+
+.questions-form-heading h3 {
+  font-size: clamp(30px, 3vw, 38px);
+}
+
+.questions-form-heading > p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.questions-field > span {
+  font-size: 16px;
+}
+
+.questions-field input,
+.questions-field select,
+.questions-field textarea {
+  padding: 15px 16px;
+  font-size: 16px;
+}
+
+.questions-field input,
+.questions-field select {
+  min-height: 54px;
+}
+
+.questions-field textarea {
+  min-height: 120px;
+}
+
+.questions-privacy {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.questions-submit {
+  min-height: 58px;
+  font-size: 17px;
+}
+
+.questions-notice {
+  font-size: 15px;
+}
+
+/* Honorarios */
+.honorarios-section {
+  padding: 100px 0;
+}
+
+.honorarios-heading {
+  max-width: 900px;
+}
+
+.honorarios-heading h2 {
+  font-size: clamp(48px, 5.5vw, 74px);
+}
+
+.honorarios-heading > p {
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.honorarios-grid {
+  gap: 24px;
+}
+
+.honorarios-card {
+  padding: clamp(28px, 3vw, 42px);
+}
+
+.honorarios-card h3 {
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.honorarios-card > p {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.honorarios-card-note {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.honorarios-disclaimer {
+  padding: 26px 28px;
+}
+
+.honorarios-disclaimer p {
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Footer de esta página, si se utiliza */
+.questions-footer-brand strong {
+  font-size: 17px;
+}
+
+.questions-footer-brand small {
+  font-size: 14px;
+}
+
+.questions-footer nav a {
+  font-size: 15px;
+}
+
+.questions-footer-inner > p {
+  font-size: 14px;
+}
+
+/* ========================================
+   TABLETAS
+======================================== */
+
+@media (max-width: 900px) {
+  .questions-container {
+    width: min(100% - 48px, 760px);
+  }
+
+  .questions-content-grid,
+  .questions-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .questions-sidebar h2,
+  .questions-sidebar > p {
+    max-width: 760px;
+  }
+}
+
+/* ========================================
+   MÓVILES
+======================================== */
+
+@media (max-width: 600px) {
+  .questions-container {
+    width: calc(100% - 36px);
+  }
+
+  .questions-hero {
+    min-height: 0;
+    padding: 64px 0 60px;
+  }
+
+  .questions-hero h1 {
+    font-size: clamp(42px, 10.5vw, 58px);
+    line-height: 1.08;
+  }
+
+  .questions-hero-content > p {
+    font-size: 17px;
+  }
+
+  .questions-eyebrow {
+    font-size: 12px;
+  }
+
+  .questions-content-section,
+  .questions-contact-section {
+    padding: 64px 0;
+  }
+
+  .questions-sidebar h2,
+  .questions-contact-copy h2 {
+    font-size: clamp(34px, 8vw, 44px);
+  }
+
+  .questions-sidebar > p,
+  .questions-contact-copy > p {
+    font-size: 17px;
+  }
+
+  .questions-sidebar-note {
+    padding: 19px;
+  }
+
+  .questions-sidebar-note p,
+  .questions-contact-promise p {
+    font-size: 15px;
+  }
+
+  .questions-trigger {
+    gap: 14px;
+    padding: 22px 0;
+    font-size: 17px;
+  }
+
+  .questions-symbol {
+    flex-basis: 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 22px;
+  }
+
+  .questions-answer {
+    margin: 0 0 23px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .questions-form {
+    padding: 25px 19px;
+  }
+
+  .questions-form-heading h3 {
+    font-size: 29px;
+  }
+
+  .questions-form-heading > p {
+    font-size: 15px;
+  }
+
+  .questions-field > span {
+    font-size: 15px;
+  }
+
+  .questions-field input,
+  .questions-field select,
+  .questions-field textarea {
+    font-size: 16px;
+  }
+
+  .questions-privacy {
+    font-size: 13px;
+  }
+
+  .questions-submit {
+    min-height: 56px;
+    font-size: 16px;
+  }
+
+  .honorarios-section {
+    padding: 66px 0;
+  }
+
+  .honorarios-heading h2 {
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .honorarios-heading > p {
+    font-size: 16px;
+  }
+
+  .honorarios-card {
+    padding: 24px 21px;
+  }
+
+  .honorarios-card h3 {
+    font-size: 23px;
+  }
+
+  .honorarios-card > p {
+    font-size: 16px;
+  }
+
+  .honorarios-card-note {
+    font-size: 14px;
+  }
+
+  .honorarios-disclaimer {
+    padding: 19px;
+  }
+
+  .honorarios-disclaimer p {
+    font-size: 14px;
+  }
+
+  .questions-footer-brand strong {
+    font-size: 16px;
+  }
+
+  .questions-footer-brand small {
+    font-size: 13px;
+  }
+
+  .questions-footer nav a {
+    font-size: 14px;
+  }
+
+  .questions-footer-inner > p {
+    font-size: 13px;
+  }
+}

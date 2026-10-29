@@ -777,3 +777,372 @@
     transition: none !important;
   }
 }
+
+/* ========================================
+   AUMENTO GENERAL DE TIPOGRAFÍA
+======================================== */
+
+/* Etiquetas superiores */
+.diagnostic-eyebrow {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Título principal */
+.diagnostic-hero h1 {
+  font-size: clamp(54px, 5.5vw, 82px);
+  line-height: 1.06;
+}
+
+/* Descripción principal */
+.diagnostic-hero-inner > p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* Botón principal */
+.diagnostic-hero-button {
+  min-height: 60px;
+  padding: 17px 24px;
+  font-size: 16px;
+}
+
+/* Nota informativa */
+.diagnostic-note {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tarjeta de análisis */
+.diagnostic-visual {
+  max-width: 490px;
+  padding: clamp(28px, 3vw, 42px);
+}
+
+.diagnostic-visual-top {
+  font-size: 13px;
+}
+
+.diagnostic-visual-top span:last-child {
+  font-size: 13px;
+}
+
+.diagnostic-visual-label {
+  font-size: 13px;
+}
+
+.diagnostic-visual h2 {
+  font-size: clamp(34px, 3.2vw, 44px);
+}
+
+.diagnostic-visual-items > div {
+  min-height: 64px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.diagnostic-visual-icon {
+  flex-basis: 36px;
+  width: 36px;
+  height: 36px;
+  font-size: 19px;
+}
+
+.diagnostic-visual-bottom {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Encabezado de la sección del formulario */
+.diagnostic-section-heading h2 {
+  font-size: clamp(36px, 4vw, 52px);
+}
+
+.diagnostic-section-heading p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Tarjeta del formulario */
+.diagnostic-card {
+  max-width: 860px;
+  padding: clamp(28px, 4vw, 52px);
+}
+
+/* Progreso */
+.diagnostic-progress-header {
+  font-size: 15px;
+}
+
+/* Preguntas */
+.diagnostic-step h3,
+.diagnostic-complete h3 {
+  font-size: clamp(30px, 3.5vw, 38px);
+  line-height: 1.25;
+}
+
+.diagnostic-step > p,
+.diagnostic-complete > p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Opciones de respuesta */
+.diagnostic-options {
+  gap: 12px;
+}
+
+.diagnostic-option {
+  min-height: 64px;
+  padding: 17px 20px;
+  gap: 15px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* Indicador de selección */
+.diagnostic-option-radio {
+  flex-basis: 19px;
+  width: 19px;
+  height: 19px;
+}
+
+.diagnostic-option.is-selected .diagnostic-option-radio {
+  border-width: 5px;
+}
+
+/* Campos de contacto */
+.diagnostic-fields {
+  gap: 22px;
+}
+
+.diagnostic-fields label {
+  gap: 10px;
+  font-size: 16px;
+}
+
+.diagnostic-fields input,
+.diagnostic-fields textarea {
+  min-height: 56px;
+  padding: 15px 16px;
+  font-size: 16px;
+}
+
+.diagnostic-fields textarea {
+  min-height: 120px;
+}
+
+/* Botones para avanzar y regresar */
+.diagnostic-next,
+.diagnostic-back {
+  min-height: 56px;
+  padding: 15px 24px;
+  font-size: 16px;
+}
+
+/* Mensajes de error */
+.diagnostic-error {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* Resumen final */
+.diagnostic-complete-icon {
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+}
+
+.diagnostic-summary {
+  padding: 24px;
+}
+
+.diagnostic-summary p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.diagnostic-disclaimer,
+.diagnostic-privacy-note {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Footer propio de Diagnóstico, si se utiliza */
+.diagnostic-footer {
+  font-size: 14px;
+}
+
+.diagnostic-footer-brand {
+  font-size: 15px;
+}
+
+/* ========================================
+   AJUSTES PARA TABLETAS Y CELULARES
+======================================== */
+
+@media (max-width: 760px) {
+  .diagnostic-hero {
+    gap: 32px;
+    padding: 56px 24px 42px;
+  }
+
+  .diagnostic-eyebrow {
+    font-size: 12px;
+  }
+
+  .diagnostic-hero h1 {
+    font-size: clamp(42px, 9vw, 60px);
+    line-height: 1.08;
+  }
+
+  .diagnostic-hero-inner > p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .diagnostic-hero-button {
+    min-height: 56px;
+    font-size: 15px;
+  }
+
+  .diagnostic-note {
+    font-size: 14px;
+  }
+
+  .diagnostic-visual {
+    max-width: none;
+    min-height: auto;
+    padding: 26px 22px;
+  }
+
+  .diagnostic-visual-top,
+  .diagnostic-visual-top span:last-child {
+    font-size: 12px;
+  }
+
+  .diagnostic-visual-label {
+    font-size: 12px;
+  }
+
+  .diagnostic-visual h2 {
+    font-size: clamp(30px, 7vw, 38px);
+  }
+
+  .diagnostic-visual-items > div {
+    min-height: 60px;
+    font-size: 15px;
+  }
+
+  .diagnostic-visual-bottom {
+    font-size: 13px;
+  }
+
+  .diagnostic-form-section {
+    padding: 64px 18px;
+  }
+
+  .diagnostic-section-heading {
+    margin-bottom: 30px;
+  }
+
+  .diagnostic-section-heading h2 {
+    font-size: clamp(30px, 7vw, 40px);
+  }
+
+  .diagnostic-section-heading p {
+    font-size: 16px;
+  }
+
+  .diagnostic-card {
+    padding: 24px 20px;
+  }
+
+  .diagnostic-progress-header {
+    font-size: 13px;
+  }
+
+  .diagnostic-step {
+    padding: 30px 0 24px;
+  }
+
+  .diagnostic-step h3,
+  .diagnostic-complete h3 {
+    font-size: clamp(27px, 6vw, 32px);
+  }
+
+  .diagnostic-step > p,
+  .diagnostic-complete > p {
+    font-size: 16px;
+  }
+
+  .diagnostic-option {
+    min-height: 60px;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .diagnostic-fields label {
+    font-size: 15px;
+  }
+
+  .diagnostic-fields input,
+  .diagnostic-fields textarea {
+    font-size: 16px;
+  }
+
+  .diagnostic-next,
+  .diagnostic-back {
+    min-height: 52px;
+    padding: 13px 17px;
+    font-size: 15px;
+  }
+
+  .diagnostic-summary p {
+    font-size: 15px;
+  }
+
+  .diagnostic-disclaimer,
+  .diagnostic-privacy-note {
+    font-size: 13px;
+  }
+
+  .diagnostic-footer {
+    font-size: 13px;
+  }
+}
+
+/* ========================================
+   CELULARES PEQUEÑOS
+======================================== */
+
+@media (max-width: 380px) {
+  .diagnostic-hero h1 {
+    font-size: 39px;
+  }
+
+  .diagnostic-hero-inner > p {
+    font-size: 16px;
+  }
+
+  .diagnostic-card {
+    padding: 21px 15px;
+  }
+
+  .diagnostic-option {
+    gap: 11px;
+    padding: 13px;
+    font-size: 15px;
+  }
+
+  .diagnostic-actions {
+    gap: 10px;
+  }
+
+  .diagnostic-next,
+  .diagnostic-back {
+    padding-inline: 12px;
+    font-size: 14px;
+  }
+}
+

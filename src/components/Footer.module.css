@@ -1,9 +1,4 @@
 
-/* =========================================
-   FOOTER - RUTA CAPITAL
-   Diseño compacto y adaptable
-========================================= */
-
 .siteFooter {
   padding: 38px 0 0;
   background: #F8F6F0;
@@ -123,5 +118,173 @@
     gap: 8px;
     padding-top: 12px;
     padding-bottom: 12px;
+  }
+}
+
+
+/* =========================================
+   FOOTER RUTA CAPITAL
+   Más ancho, menos altura
+========================================= */
+
+.siteFooter {
+  padding: 34px 0 0;
+  background: #F8F6F0;
+  color: #0C3B2E;
+}
+
+/* Distribución horizontal */
+.footerMain {
+  display: grid;
+  grid-template-columns: 1.2fr 0.7fr 1fr;
+  gap: clamp(36px, 5vw, 76px);
+  padding-bottom: 24px;
+}
+
+/* Columna de marca */
+.footerBrand {
+  min-width: 0;
+}
+
+.footerBrand > p,
+.footerContact > p {
+  max-width: 390px;
+  margin: 10px 0 0;
+  color: #68776B;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Enlaces y contacto */
+.footerLinks,
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+}
+
+.footerLinks > strong,
+.footerContact > strong {
+  margin-bottom: 3px;
+  color: #0C3B2E;
+  font-size: 15px;
+}
+
+.footerLinks > a {
+  color: #68776B;
+  font-size: 14px;
+  line-height: 1.55;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footerLinks > a:hover {
+  color: #6D9773;
+}
+
+.textLink {
+  margin-top: 1px;
+  font-size: 14px;
+}
+
+/* Franja inferior */
+.footerBottom {
+  min-height: 54px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid #D5E0D4;
+  color: #68776B;
+  font-size: 12px;
+  line-height: 1.6;
+  padding-block: 12px;
+}
+
+.footerBottom a {
+  color: #0C3B2E;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footerBottom a:hover {
+  color: #6D9773;
+}
+
+/* =========================================
+   TABLETAS
+========================================= */
+
+@media (max-width: 900px) {
+  .footerMain {
+    grid-template-columns: 1fr 0.8fr;
+    gap: 30px 42px;
+  }
+
+  .footerBrand {
+    grid-column: 1 / -1;
+  }
+
+  .footerBrand > p,
+  .footerContact > p {
+    max-width: 520px;
+  }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+  .siteFooter {
+    padding-top: 28px;
+  }
+
+  .footerMain {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding-bottom: 22px;
+  }
+
+  .footerBrand {
+    grid-column: auto;
+  }
+
+  .footerBrand > p,
+  .footerContact > p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .footerLinks,
+  .footerContact {
+    gap: 8px;
+  }
+
+  .footerLinks > strong,
+  .footerContact > strong {
+    font-size: 15px;
+  }
+
+  .footerLinks > a,
+  .textLink {
+    font-size: 14px;
+  }
+
+  .footerBottom {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    padding-block: 14px;
+    font-size: 12px;
+  }
+
+  .footerBottom a {
+    font-size: 12px;
   }
 }

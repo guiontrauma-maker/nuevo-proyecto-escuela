@@ -487,3 +487,226 @@
     transition: none;
   }
 }
+
+/* =========================================
+   TIPOGRAFÍA MÁS GRANDE
+   AVISO DE PRIVACIDAD — RUTA CAPITAL
+========================================= */
+
+/* Etiqueta superior */
+.privacy-eyebrow {
+  font-size: 14px;
+}
+
+/* Título principal */
+.privacy-hero h1 {
+  font-size: clamp(48px, 6.5vw, 86px);
+  line-height: 1.1;
+}
+
+/* Descripción principal */
+.privacy-hero > .privacy-container > p {
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+/* Fecha de actualización */
+.privacy-update {
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 13px 18px;
+}
+
+/* Título del índice */
+.privacy-sidebar-label {
+  font-size: 13px;
+}
+
+/* Enlaces del índice lateral */
+.privacy-sidebar nav a {
+  font-size: 16px;
+  line-height: 1.75;
+  padding: 12px 0;
+}
+
+/* Nota del índice */
+.privacy-sidebar-note p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.privacy-sidebar-note > span {
+  font-size: 24px;
+}
+
+/* Identificador del documento */
+.privacy-document-mark {
+  font-size: 21px;
+}
+
+/* Etiqueta sobre el título del documento */
+.privacy-document-kicker {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Título del documento */
+.privacy-document-intro h2 {
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.35;
+}
+
+/* Introducción */
+.privacy-intro-text {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Títulos de los apartados */
+.privacy-article-section h2 {
+  font-size: clamp(24px, 2.5vw, 30px);
+  line-height: 1.4;
+}
+
+/* Texto de todos los apartados */
+.privacy-article-body {
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+/* Separación entre párrafos */
+.privacy-article-body p {
+  margin-bottom: 19px;
+}
+
+/* Listas */
+.privacy-article-body ul {
+  gap: 12px;
+  margin: 18px 0 22px;
+  padding-left: 26px;
+}
+
+.privacy-article-body li {
+  padding-left: 5px;
+}
+
+/* Mensaje final */
+.privacy-closing p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* Botón de la franja de contacto */
+.privacy-back-button {
+  font-size: 15px;
+  min-height: 56px;
+  padding-inline: 24px;
+}
+
+/* Título de la franja de contacto */
+.privacy-contact-strip h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.3;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+  .privacy-eyebrow {
+    font-size: 12px;
+  }
+
+  .privacy-hero h1 {
+    font-size: clamp(42px, 11.5vw, 58px);
+    line-height: 1.1;
+  }
+
+  .privacy-hero > .privacy-container > p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .privacy-update {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .privacy-sidebar-label {
+    font-size: 12px;
+  }
+
+  .privacy-sidebar nav a {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .privacy-sidebar-note p {
+    font-size: 14px;
+  }
+
+  .privacy-document {
+    padding: 26px 20px;
+  }
+
+  .privacy-document-mark {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+
+  .privacy-document-kicker {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .privacy-document-intro h2 {
+    font-size: 27px;
+    line-height: 1.35;
+  }
+
+  .privacy-intro-text {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .privacy-article-section h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .privacy-article-body {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .privacy-article-body p {
+    margin-bottom: 17px;
+  }
+
+  .privacy-article-body ul {
+    gap: 11px;
+    padding-left: 23px;
+  }
+
+  .privacy-closing {
+    padding: 20px 17px;
+    gap: 12px;
+  }
+
+  .privacy-closing p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .privacy-contact-strip h2 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .privacy-back-button {
+    font-size: 14px;
+    min-height: 54px;
+  }
+}

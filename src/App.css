@@ -1723,3 +1723,352 @@ textarea:focus-visible {
     transition: none;
   }
 }
+/* =========================================
+   RUTA CAPITAL — TIPOGRAFÍA MÁS GRANDE
+   Sobrescribe los tamaños anteriores
+========================================= */
+
+/* Navegación */
+.main-nav > a,
+.main-nav .nav-contact {
+  font-size: 18px;
+}
+
+.brand-copy strong {
+  font-size: 25px;
+}
+
+.brand-copy small {
+  font-size: 13px;
+}
+
+/* Etiquetas y textos auxiliares */
+.eyebrow,
+.process-intro .eyebrow {
+  font-size: 14px;
+}
+
+.hero-note,
+.scroll-cue {
+  font-size: 15px;
+}
+
+/* Portada */
+.hero h1 {
+  font-size: clamp(48px, 5.5vw, 76px);
+}
+
+.hero-description {
+  font-size: 20px;
+  line-height: 1.85;
+}
+
+/* Botones */
+.button {
+  font-size: 17px;
+  min-height: 58px;
+  padding-inline: 27px;
+}
+
+/* Introducción y textos generales */
+.intro-copy p,
+.section-side-copy {
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.text-link {
+  font-size: 17px;
+}
+
+/* Tarjetas */
+.value-card h3,
+.service-card h3 {
+  font-size: 29px;
+  line-height: 1.35;
+}
+
+.value-card p,
+.service-card p {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.service-tag {
+  font-size: 14px;
+}
+
+.service-link {
+  font-size: 17px;
+}
+
+.section-disclaimer {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Proceso */
+.process-intro h2 {
+  font-size: clamp(44px, 6vw, 72px);
+}
+
+.process-intro > p {
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.process-item-copy h3 {
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.process-item-copy p {
+  font-size: 18px;
+  line-height: 1.9;
+}
+
+.process-action-button {
+  font-size: 17px;
+  min-height: 62px;
+}
+
+.process-action > p {
+  font-size: 15px;
+}
+
+/* Contacto */
+.contact-copy > p {
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.contact-promise strong {
+  font-size: 19px;
+}
+
+.contact-promise p {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* Formulario */
+.form-kicker {
+  font-size: 14px;
+}
+
+.form-heading h3 {
+  font-size: 40px;
+}
+
+.form-heading > p {
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.field > span {
+  font-size: 17px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-size: 17px;
+}
+
+.field input,
+.field select {
+  height: 56px;
+}
+
+.field textarea {
+  min-height: 145px;
+}
+
+.character-count {
+  font-size: 14px;
+}
+
+.consent-field {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.consent-field input {
+  width: 19px;
+  height: 19px;
+}
+
+.form-error {
+  font-size: 16px;
+}
+
+.form-footnote {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+  .main-nav > a,
+  .main-nav .nav-contact {
+    font-size: 18px;
+  }
+
+  .brand-copy strong {
+    font-size: 20px;
+  }
+
+  .brand-copy small {
+    font-size: 12px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(46px, 12vw, 62px);
+    line-height: 1.12;
+  }
+
+  .hero-description {
+    font-size: 19px;
+    line-height: 1.85;
+  }
+
+  .hero-note {
+    font-size: 15px;
+  }
+
+  .button {
+    font-size: 17px;
+    min-height: 58px;
+  }
+
+  .intro-copy p,
+  .section-side-copy {
+    font-size: 18px;
+    line-height: 1.85;
+  }
+
+  .section-heading h2,
+  .contact-copy h2 {
+    font-size: clamp(38px, 10vw, 49px);
+  }
+
+  .value-card h3,
+  .service-card h3 {
+    font-size: 28px;
+  }
+
+  .value-card p,
+  .service-card p {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .service-tag {
+    font-size: 13px;
+  }
+
+  .service-link {
+    font-size: 16px;
+  }
+
+  .section-disclaimer {
+    font-size: 14px;
+  }
+
+  .process-intro .eyebrow {
+    font-size: 12px;
+  }
+
+  .process-intro h2 {
+    font-size: clamp(39px, 10vw, 53px);
+    line-height: 1.15;
+  }
+
+  .process-intro > p {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  .process-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .process-item-copy h3 {
+    font-size: 20px;
+  }
+
+  .process-item-copy p {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .process-action-button {
+    font-size: 16px;
+    min-height: 58px;
+  }
+
+  .process-action > p {
+    font-size: 14px;
+  }
+
+  .contact-copy > p {
+    font-size: 18px;
+    line-height: 1.85;
+  }
+
+  .contact-promise strong {
+    font-size: 18px;
+  }
+
+  .contact-promise p {
+    font-size: 15px;
+  }
+
+  .form-kicker {
+    font-size: 13px;
+  }
+
+  .form-heading h3 {
+    font-size: 35px;
+  }
+
+  .form-heading > p {
+    font-size: 17px;
+  }
+
+  .field > span {
+    font-size: 17px;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 17px;
+  }
+
+  .field input,
+  .field select {
+    height: 56px;
+  }
+
+  .consent-field {
+    font-size: 15px;
+  }
+
+  .form-error {
+    font-size: 15px;
+  }
+
+  .form-footnote {
+    font-size: 14px;
+  }
+}

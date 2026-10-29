@@ -474,3 +474,204 @@
     transition: none;
   }
 }
+
+/* =========================================
+    MÁS GRANDE
+========================================= */
+
+/* Texto pequeño superior */
+.terms-eyebrow {
+  font-size: 14px;
+}
+
+/* Título principal */
+.terms-hero h1 {
+  font-size: clamp(48px, 6.5vw, 86px);
+  line-height: 1.08;
+}
+
+/* Descripción debajo del título */
+.terms-hero .terms-container > p {
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+/* Fecha de actualización */
+.terms-update {
+  font-size: 15px;
+  padding: 13px 18px;
+}
+
+/* Etiqueta de navegación lateral */
+.terms-sidebar-label {
+  font-size: 13px;
+}
+
+/* Enlaces del índice lateral */
+.terms-sidebar nav a {
+  font-size: 16px;
+  line-height: 1.7;
+  padding: 12px 0;
+}
+
+/* Nota del índice lateral */
+.terms-sidebar-note p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.terms-sidebar-note > span {
+  font-size: 24px;
+}
+
+/* Identificación del documento */
+.terms-document-mark {
+  font-size: 21px;
+}
+
+.terms-document-kicker {
+  font-size: 12px;
+}
+
+/* Título del documento */
+.terms-document-heading h2 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+/* Introducción del documento */
+.terms-intro {
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Títulos de cada apartado */
+.terms-article-section h2 {
+  font-size: clamp(24px, 2.5vw, 29px);
+  line-height: 1.4;
+}
+
+/* Texto general de los términos */
+.terms-article-body {
+  font-size: 16px;
+  line-height: 1.95;
+}
+
+/* Espaciado entre párrafos */
+.terms-article-body p {
+  margin-bottom: 19px;
+}
+
+/* Mensaje final */
+.terms-closing p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* Texto de contacto */
+.terms-contact-strip h2 {
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+/* Botón de contacto */
+.terms-contact-button {
+  font-size: 15px;
+  min-height: 56px;
+  padding: 0 24px;
+}
+
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+  .terms-eyebrow {
+    font-size: 12px;
+  }
+
+  .terms-hero h1 {
+    font-size: clamp(42px, 11.5vw, 58px);
+    line-height: 1.08;
+  }
+
+  .terms-hero .terms-container > p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .terms-update {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .terms-sidebar-label {
+    font-size: 12px;
+  }
+
+  .terms-sidebar nav a {
+    font-size: 15px;
+    padding: 11px 0;
+  }
+
+  .terms-sidebar-note p {
+    font-size: 14px;
+  }
+
+  .terms-document {
+    padding: 26px 20px;
+  }
+
+  .terms-document-mark {
+    width: 46px;
+    height: 46px;
+    font-size: 19px;
+  }
+
+  .terms-document-kicker {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+
+  .terms-document-heading h2 {
+    font-size: 27px;
+    line-height: 1.3;
+  }
+
+  .terms-intro {
+    font-size: 16px;
+    line-height: 1.85;
+  }
+
+  .terms-article-section h2 {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .terms-article-body {
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .terms-article-body p {
+    margin-bottom: 17px;
+  }
+
+  .terms-closing {
+    padding: 20px 17px;
+    gap: 12px;
+  }
+
+  .terms-closing p {
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  .terms-contact-strip h2 {
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .terms-contact-button {
+    font-size: 14px;
+    min-height: 54px;
+  }
+}
