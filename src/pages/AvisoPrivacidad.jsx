@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import "./AvisoPrivacidad.css";
 
@@ -188,7 +187,7 @@ export default function AvisoPrivacidad() {
       <Navbar />
 
       <main className="privacy-page">
-        <section className="privacy-hero">
+        <section className="privacy-hero" id="inicio">
           <div className="privacy-container">
             <span className="privacy-eyebrow">
               RUTA CAPITAL · TRANSPARENCIA
@@ -241,6 +240,7 @@ export default function AvisoPrivacidad() {
             <article className="privacy-document">
               <div className="privacy-document-intro">
                 <span className="privacy-document-mark">RC</span>
+
                 <div>
                   <span className="privacy-document-kicker">
                     TU INFORMACIÓN, CON CLARIDAD
@@ -265,6 +265,7 @@ export default function AvisoPrivacidad() {
                   key={seccion.titulo}
                 >
                   <h2>{seccion.titulo}</h2>
+
                   <div className="privacy-article-body">
                     {seccion.contenido}
                   </div>
@@ -288,6 +289,7 @@ export default function AvisoPrivacidad() {
               <span className="privacy-eyebrow">
                 ¿TIENES ALGUNA DUDA?
               </span>
+
               <h2>Estamos para escucharte.</h2>
             </div>
 
@@ -297,25 +299,6 @@ export default function AvisoPrivacidad() {
           </div>
         </section>
       </main>
-
-      <footer className="privacy-footer">
-        <div className="privacy-container privacy-footer-inner">
-          <a className="privacy-footer-brand" href="/">
-            RUTA CAPITAL
-          </a>
-
-          <div className="privacy-footer-links">
-            <a href="/">Inicio</a>
-            <a href="/terminos-y-condiciones">
-              Términos y condiciones
-            </a>
-          </div>
-
-          <span>
-            © {new Date().getFullYear()} Ruta Capital
-          </span>
-        </div>
-      </footer>
     </>
   );
 }

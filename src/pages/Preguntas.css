@@ -1,16 +1,30 @@
 
+/* ========================================
+   RUTA CAPITAL — PREGUNTAS Y HONORARIOS
+   Paleta: verde bosque, salvia y crema
+======================================== */
+
 .questions-page {
-  --q-chocolate: #443025;
-  --q-alewood: #7f5836;
-  --q-milk: #aa7f66;
-  --q-sakura: #ec9c9d;
-  --q-rose: #f2cfd2;
-  --q-cream: #faf7f4;
-  --q-muted: #81746b;
-  --q-line: #ece3dc;
+  --q-forest: #0C3B2E;
+  --q-sage: #6D9773;
+  --q-pale: #E1E9DF;
+  --q-cream: #F8F6F0;
+  --q-white: #FFFFFF;
+  --q-muted: #68776B;
+  --q-text: #43594A;
+  --q-line: #D5E0D4;
+  --q-soft: #F0F4ED;
+  --q-dark-text: #E5EDE4;
+
   overflow: hidden;
   background: var(--q-cream);
-  color: var(--q-chocolate);
+  color: var(--q-forest);
+}
+
+.questions-page *,
+.questions-page *::before,
+.questions-page *::after {
+  box-sizing: border-box;
 }
 
 .questions-container {
@@ -18,27 +32,28 @@
   margin-inline: auto;
 }
 
+/* ========================================
+   HERO
+======================================== */
 
 .questions-hero {
   position: relative;
   isolation: isolate;
-  min-height: 440px;
   display: flex;
+  min-height: 440px;
   align-items: center;
   overflow: hidden;
   padding: 82px 0 92px;
-
-  background-color: #FAF7F4;
+  background-color: var(--q-cream);
   background-image:
     linear-gradient(
       90deg,
-      rgba(250, 247, 244, 0.97) 0%,
-      rgba(250, 247, 244, 0.90) 38%,
-      rgba(250, 247, 244, 0.35) 67%,
-      rgba(250, 247, 244, 0.10) 100%
+      rgba(248, 246, 240, 0.98) 0%,
+      rgba(248, 246, 240, 0.92) 38%,
+      rgba(248, 246, 240, 0.52) 67%,
+      rgba(248, 246, 240, 0.18) 100%
     ),
     url("/images/ruta-capital-hero-preguntas.png");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,7 +68,7 @@
 .questions-eyebrow {
   display: inline-block;
   margin-bottom: 18px;
-  color: var(--q-alewood);
+  color: var(--q-sage);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -71,12 +86,13 @@
 
 .questions-hero h1 {
   max-width: 700px;
+  color: var(--q-forest);
   font-size: clamp(3rem, 6vw, 5.2rem);
   line-height: 1.04;
 }
 
 .questions-hero h1 span {
-  color: var(--q-milk);
+  color: var(--q-sage);
   font-style: italic;
 }
 
@@ -92,7 +108,7 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: var(--q-chocolate);
+  color: var(--q-forest);
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
@@ -108,9 +124,17 @@
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid #ddc9bd;
+  border: 1px solid var(--q-line);
   border-radius: 50%;
-  color: var(--q-alewood);
+  color: var(--q-sage);
+  transition:
+    background 200ms ease,
+    border-color 200ms ease;
+}
+
+.questions-hero-link:hover span {
+  border-color: var(--q-sage);
+  background: var(--q-pale);
 }
 
 .questions-hero-glow {
@@ -121,7 +145,7 @@
   width: 440px;
   height: 440px;
   border-radius: 50%;
-  background: rgba(236, 156, 157, 0.15);
+  background: rgba(109, 151, 115, 0.19);
   filter: blur(30px);
   animation: questions-glow 8s ease-in-out infinite alternate;
 }
@@ -139,7 +163,7 @@
 .questions-ring {
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(127, 88, 54, 0.2);
+  border: 1px solid rgba(12, 59, 46, 0.17);
   border-radius: 50%;
 }
 
@@ -149,13 +173,14 @@
 
 .ring-two {
   inset: 28px;
-  border-color: rgba(236, 156, 157, 0.6);
+  border-color: rgba(109, 151, 115, 0.55);
   animation: questions-spin 22s linear infinite reverse;
 }
 
 .ring-three {
   inset: 62px;
   border-style: dashed;
+  border-color: rgba(109, 151, 115, 0.35);
   animation: questions-spin 40s linear infinite;
 }
 
@@ -164,14 +189,18 @@
   inset: 0;
   display: grid;
   place-items: center;
-  color: var(--q-sakura);
+  color: var(--q-sage);
   font-size: 5rem;
   animation: questions-star-float 5s ease-in-out infinite;
 }
 
+/* ========================================
+   PREGUNTAS FRECUENTES
+======================================== */
+
 .questions-content-section {
   padding: 110px 0;
-  background: #fffdfb;
+  background: var(--q-white);
 }
 
 .questions-content-grid {
@@ -188,6 +217,7 @@
 
 .questions-sidebar h2 {
   max-width: 390px;
+  color: var(--q-forest);
   font-size: clamp(2.1rem, 3.4vw, 3.3rem);
   line-height: 1.18;
 }
@@ -207,11 +237,12 @@
   padding: 20px;
   border: 1px solid var(--q-line);
   border-radius: 12px;
-  background: var(--q-cream);
+  background: var(--q-soft);
 }
 
 .questions-sidebar-note > span {
-  color: var(--q-sakura);
+  flex-shrink: 0;
+  color: var(--q-sage);
   font-size: 1.5rem;
 }
 
@@ -239,7 +270,7 @@
   padding: 25px 0;
   border: 0;
   background: transparent;
-  color: var(--q-chocolate);
+  color: var(--q-forest);
   text-align: left;
   font: inherit;
   font-size: 0.99rem;
@@ -254,7 +285,7 @@
 
 .questions-trigger:hover > span:first-child,
 .questions-item.is-open .questions-trigger > span:first-child {
-  color: var(--q-alewood);
+  color: var(--q-sage);
 }
 
 .questions-symbol {
@@ -263,20 +294,21 @@
   width: 32px;
   height: 32px;
   place-items: center;
-  border: 1px solid #e7d8cf;
+  border: 1px solid var(--q-line);
   border-radius: 50%;
-  color: var(--q-alewood);
+  color: var(--q-forest);
   font-size: 1.25rem;
   font-weight: 400;
   transition:
     background 200ms ease,
+    border-color 200ms ease,
     transform 200ms ease;
 }
 
 .questions-item.is-open .questions-symbol {
   transform: rotate(180deg);
-  border-color: var(--q-rose);
-  background: var(--q-rose);
+  border-color: var(--q-pale);
+  background: var(--q-pale);
 }
 
 .questions-answer {
@@ -287,10 +319,18 @@
   animation: questions-rise 250ms ease both;
 }
 
+/* ========================================
+   CONTACTO
+======================================== */
+
 .questions-contact-section {
   padding: 110px 0;
   background:
-    radial-gradient(circle at 0% 100%, rgba(242, 207, 210, 0.25), transparent 32%),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(109, 151, 115, 0.15),
+      transparent 32%
+    ),
     var(--q-cream);
 }
 
@@ -306,6 +346,7 @@
 }
 
 .questions-contact-copy h2 {
+  color: var(--q-forest);
   font-size: clamp(2.3rem, 4vw, 3.7rem);
   line-height: 1.13;
 }
@@ -325,7 +366,7 @@
   padding: 20px;
   border: 1px solid var(--q-line);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .questions-promise-icon {
@@ -335,14 +376,15 @@
   height: 42px;
   place-items: center;
   border-radius: 50%;
-  background: var(--q-rose);
-  color: var(--q-chocolate);
+  background: var(--q-pale);
+  color: var(--q-forest);
   font-size: 1.25rem;
 }
 
 .questions-contact-promise strong {
   display: block;
   margin: 2px 0 7px;
+  color: var(--q-forest);
   font-size: 0.92rem;
 }
 
@@ -353,12 +395,16 @@
   line-height: 1.7;
 }
 
+/* ========================================
+   FORMULARIO
+======================================== */
+
 .questions-form {
   padding: clamp(24px, 4vw, 42px);
   border: 1px solid var(--q-line);
   border-radius: 18px;
-  background: #fffdfb;
-  box-shadow: 0 20px 65px rgba(68, 48, 37, 0.055);
+  background: var(--q-white);
+  box-shadow: 0 20px 65px rgba(12, 59, 46, 0.07);
 }
 
 .questions-form-heading {
@@ -371,6 +417,7 @@
 
 .questions-form-heading h3 {
   margin: 0;
+  color: var(--q-forest);
   font-family: var(--font-heading, "Playfair Display", Georgia, serif);
   font-size: clamp(1.8rem, 3vw, 2.3rem);
   font-weight: 500;
@@ -398,7 +445,7 @@
 }
 
 .questions-field > span {
-  color: var(--q-chocolate);
+  color: var(--q-forest);
   font-size: 0.82rem;
   font-weight: 600;
 }
@@ -409,11 +456,11 @@
   width: 100%;
   min-width: 0;
   padding: 13px 14px;
-  border: 1px solid #e6dcd4;
+  border: 1px solid var(--q-line);
   border-radius: 7px;
   outline: none;
-  background: #fff;
-  color: var(--q-chocolate);
+  background: var(--q-white);
+  color: var(--q-forest);
   font: inherit;
   font-size: 0.87rem;
   transition:
@@ -433,14 +480,14 @@
 
 .questions-field input::placeholder,
 .questions-field textarea::placeholder {
-  color: #aa9e95;
+  color: #829084;
 }
 
 .questions-field input:focus,
 .questions-field select:focus,
 .questions-field textarea:focus {
-  border-color: var(--q-milk);
-  box-shadow: 0 0 0 3px rgba(170, 127, 102, 0.12);
+  border-color: var(--q-sage);
+  box-shadow: 0 0 0 3px rgba(109, 151, 115, 0.15);
 }
 
 .questions-field-full {
@@ -462,39 +509,52 @@
   justify-content: center;
   gap: 12px;
   padding: 14px 20px;
-  border: 1px solid var(--q-chocolate);
+  border: 1px solid var(--q-forest);
   border-radius: 7px;
-  background: var(--q-chocolate);
-  color: #fffaf6;
+  background: var(--q-forest);
+  color: var(--q-white);
   font: inherit;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition:
     background 200ms ease,
+    border-color 200ms ease,
     transform 200ms ease;
 }
 
 .questions-submit:hover {
   transform: translateY(-2px);
-  background: var(--q-alewood);
+  border-color: var(--q-sage);
+  background: var(--q-sage);
 }
 
 .questions-submit span {
   font-size: 1.15rem;
 }
 
+.questions-submit:focus-visible,
+.questions-hero-link:focus-visible,
+.questions-trigger:focus-visible {
+  outline: 3px solid var(--q-sage);
+  outline-offset: 4px;
+}
+
 .questions-notice {
   margin: 15px 0 0;
-  color: var(--q-alewood);
+  color: var(--q-forest);
   font-size: 0.85rem;
   line-height: 1.7;
 }
 
+/* ========================================
+   FOOTER
+======================================== */
+
 .questions-footer {
   padding: 32px 0;
-  background: var(--q-chocolate);
-  color: #fffaf6;
+  background: var(--q-forest);
+  color: var(--q-cream);
 }
 
 .questions-footer-inner {
@@ -517,9 +577,9 @@
   width: 44px;
   height: 44px;
   place-items: center;
-  border: 1px solid rgba(242, 207, 210, 0.65);
+  border: 1px solid rgba(225, 233, 223, 0.5);
   border-radius: 50%;
-  color: var(--q-rose);
+  color: var(--q-pale);
   font-family: var(--font-heading, Georgia, serif);
   font-size: 1rem;
 }
@@ -536,7 +596,7 @@
 
 .questions-footer-brand small {
   margin-top: 5px;
-  color: #d9c8bd;
+  color: #7ba07b;
   font-size: 0.72rem;
 }
 
@@ -547,27 +607,32 @@
 }
 
 .questions-footer nav a {
-  color: #f4e9e2;
+  color: #2e5828;
   font-size: 0.8rem;
   text-decoration: none;
   transition: color 180ms ease;
 }
 
 .questions-footer nav a:hover {
-  color: var(--q-rose);
+  color: #799678;
 }
 
 .questions-footer-inner > p {
   margin: 0;
-  color: #d9c8bd;
+  color: #C1D0C1;
   font-size: 0.75rem;
 }
+
+/* ========================================
+   ANIMACIONES
+======================================== */
 
 @keyframes questions-rise {
   from {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -585,6 +650,7 @@
     transform: scale(0.92);
     opacity: 0.55;
   }
+
   to {
     transform: scale(1.08);
     opacity: 1;
@@ -596,10 +662,15 @@
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-12px) rotate(12deg);
   }
 }
+
+/* ========================================
+   TABLETAS
+======================================== */
 
 @media (max-width: 900px) {
   .questions-hero-decoration {
@@ -635,9 +706,13 @@
   }
 }
 
+/* ========================================
+   MÓVILES
+======================================== */
+
 @media (max-width: 600px) {
   .questions-container {
-    width: min(100% - 36px, 1160px);
+    width: min(calc(100% - 36px), 1160px);
   }
 
   .questions-hero {
@@ -706,17 +781,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .questions-page *,
-  .questions-page *::before,
-  .questions-page *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 /* ========================================
    HONORARIOS
 ======================================== */
@@ -728,10 +792,10 @@
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(236, 156, 157, 0.14),
+      rgba(109, 151, 115, 0.16),
       transparent 32%
     ),
-    #FAF7F4;
+    var(--q-cream);
 }
 
 .honorarios-heading {
@@ -751,13 +815,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #EC9C9D;
-  box-shadow: 0 0 0 5px rgba(236, 156, 157, 0.15);
+  background: var(--q-sage);
+  box-shadow: 0 0 0 5px rgba(109, 151, 115, 0.15);
 }
 
 .honorarios-heading h2 {
   margin: 24px 0 18px;
-  color: #443025;
+  color: var(--q-forest);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(42px, 6vw, 68px);
   font-weight: 500;
@@ -766,14 +830,14 @@
 }
 
 .honorarios-heading h2 span {
-  color: #AA7F66;
+  color: var(--q-sage);
   font-style: italic;
 }
 
 .honorarios-heading > p {
   max-width: 580px;
   margin: 0 auto;
-  color: #6D5B50;
+  color: var(--q-text);
   font-size: 14px;
   line-height: 1.9;
 }
@@ -790,10 +854,10 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 30px;
-  border: 1px solid rgba(68, 48, 37, 0.09);
+  border: 1px solid var(--q-line);
   border-radius: 17px;
-  background: #FFFFFF;
-  box-shadow: 0 10px 32px rgba(68, 48, 37, 0.045);
+  background: var(--q-white);
+  box-shadow: 0 10px 32px rgba(12, 59, 46, 0.05);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
@@ -802,8 +866,8 @@
 
 .honorarios-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(170, 127, 102, 0.35);
-  box-shadow: 0 18px 38px rgba(68, 48, 37, 0.09);
+  border-color: rgba(109, 151, 115, 0.5);
+  box-shadow: 0 18px 38px rgba(12, 59, 46, 0.09);
 }
 
 .honorarios-card-icon {
@@ -813,15 +877,15 @@
   place-items: center;
   margin-bottom: 22px;
   border-radius: 13px;
-  background: #F2CFD2;
-  color: #443025;
+  background: var(--q-pale);
+  color: var(--q-forest);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 25px;
 }
 
 .honorarios-card h3 {
   margin: 0 0 14px;
-  color: #443025;
+  color: var(--q-forest);
   font-size: 21px;
   font-weight: 750;
   letter-spacing: -0.025em;
@@ -829,7 +893,7 @@
 
 .honorarios-card > p {
   margin: 0;
-  color: #66564B;
+  color: var(--q-text);
   font-size: 13px;
   line-height: 1.95;
 }
@@ -838,8 +902,8 @@
   width: 100%;
   margin-top: 22px;
   padding-top: 17px;
-  border-top: 1px solid #F0E8E2;
-  color: #7F5836;
+  border-top: 1px solid var(--q-line);
+  color: var(--q-forest);
   font-size: 11px;
   font-weight: 650;
   line-height: 1.8;
@@ -851,29 +915,31 @@
   gap: 14px;
   margin-top: 25px;
   padding: 22px 24px;
-  border: 1px solid rgba(170, 127, 102, 0.2);
+  border: 1px solid var(--q-line);
   border-radius: 13px;
-  background: rgba(242, 207, 210, 0.2);
+  background: var(--q-soft);
 }
 
 .honorarios-disclaimer > span {
   flex-shrink: 0;
-  color: #7F5836;
+  color: var(--q-sage);
   font-size: 21px;
 }
 
 .honorarios-disclaimer p {
   margin: 0;
-  color: #5F4B40;
+  color: var(--q-text);
   font-size: 12px;
   line-height: 1.9;
 }
 
 .honorarios-disclaimer strong {
-  color: #443025;
+  color: var(--q-forest);
 }
 
-/* TABLETAS Y MÓVILES */
+/* ========================================
+   HONORARIOS — MÓVILES
+======================================== */
 
 @media (max-width: 620px) {
   .honorarios-section {
@@ -930,9 +996,24 @@
   }
 }
 
+/* ========================================
+   ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+======================================== */
+
 @media (prefers-reduced-motion: reduce) {
+  .questions-page *,
+  .questions-page *::before,
+  .questions-page *::after,
+  .honorarios-section *,
+  .honorarios-section *::before,
+  .honorarios-section *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
   .honorarios-card {
     transition: none;
   }
 }
-

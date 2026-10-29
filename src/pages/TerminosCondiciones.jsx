@@ -1,4 +1,3 @@
-
 import Navbar from "../components/Navbar";
 import "./TerminosCondiciones.css";
 
@@ -325,21 +324,6 @@ export default function TerminosCondiciones() {
           </div>
         </section>
       </main>
-
-      <footer className="terms-footer">
-        <div className="terms-container terms-footer-inner">
-          <a className="terms-footer-brand" href="/">
-            RUTA CAPITAL
-          </a>
-
-          <div className="terms-footer-links">
-            <a href="/">Inicio</a>
-            <a href="/aviso-de-privacidad">Aviso de privacidad</a>
-          </div>
-
-          <span>© {new Date().getFullYear()} Ruta Capital</span>
-        </div>
-      </footer>
     </>
   );
 }

@@ -8,6 +8,7 @@ import Preguntas from "./pages/Preguntas.jsx";
 import Diagnostico from "./pages/Diagnostico.jsx";
 import AvisoPrivacidad from "./pages/AvisoPrivacidad.jsx";
 import TerminosCondiciones from "./pages/TerminosCondiciones.jsx";
+import Footer from "./components/Footer.jsx";
 
 import "./index.css";
 
@@ -38,5 +39,10 @@ function getPage() {
 }
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>{getPage()}</StrictMode>
+  <StrictMode>
+    <>
+      {getPage()}
+      <Footer />
+    </>
+  </StrictMode>
 );

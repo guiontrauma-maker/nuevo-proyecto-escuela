@@ -3,22 +3,24 @@
 
 :root {
   font-family: "DM Sans", sans-serif;
-  color: #443025;
-  background: #faf7f4;
+  color: #0C3B2E;
+  background: #F8F6F0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --chocolate: #443025;
-  --alewood: #7f5836;
-  --milk-tea: #aa7f66;
-  --sakura: #ec9c9d;
-  --misty-rose: #f2cfd2;
-  --cream: #faf7f4;
-  --muted: #81746b;
-  --line: #ece3dc;
+  /* Nueva paleta de Ruta Capital */
+  --chocolate: #0C3B2E;
+  --alewood: #BB8A52;
+  --milk-tea: #6D9773;
+  --sakura: #6D9773;
+  --misty-rose: #E1E9DF;
+  --cream: #F8F6F0;
+  --muted: #68776B;
+  --line: #E0E5DA;
 
+  /* Tipografías */
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "DM Sans", sans-serif;
 
@@ -68,7 +70,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--sakura);
+  outline: 2px solid var(--milk-tea);
   outline-offset: 4px;
 }
 
@@ -82,8 +84,8 @@ svg {
 }
 
 ::selection {
-  color: var(--chocolate);
-  background: var(--misty-rose);
+  color: #F8F6F0;
+  background: #0C3B2E;
 }
 
 #root {

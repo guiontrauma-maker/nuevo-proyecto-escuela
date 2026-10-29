@@ -4,9 +4,9 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  background: rgba(250, 247, 244, 0.94);
+  background: rgba(248, 246, 240, 0.96);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(68, 48, 37, 0.09);
+  border-bottom: 1px solid rgba(12, 59, 46, 0.12);
 }
 
 .navbar-inner {
@@ -31,7 +31,7 @@
 .logo-placeholder {
   width: 48px;
   height: 48px;
-  border: 1px dashed var(--milk-tea);
+  border: 1px dashed var(--alewood);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -59,7 +59,7 @@
 
 .logo-placeholder span:nth-child(3) {
   height: 19px;
-  background: var(--sakura);
+  background: var(--milk-tea);
 }
 
 .brand-copy {
@@ -103,7 +103,7 @@
   bottom: 3px;
   left: 0;
   height: 2px;
-  background: var(--sakura);
+  background: var(--milk-tea);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -130,6 +130,10 @@
   cursor: pointer;
 }
 
+.menu-toggle:hover {
+  background: var(--misty-rose);
+}
+
 @media (max-width: 900px) {
   .navbar-inner {
     min-height: 78px;
@@ -151,7 +155,7 @@
     padding: 12px 24px 22px;
     border-bottom: 1px solid var(--line);
     background: var(--cream);
-    box-shadow: 0 15px 25px rgba(68, 48, 37, 0.07);
+    box-shadow: 0 15px 25px rgba(12, 59, 46, 0.08);
   }
 
   .main-nav.is-open {

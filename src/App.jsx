@@ -1,5 +1,7 @@
 import Navbar from "./components/Navbar";
 import "./HeroMotion.css";
+import LogoPlaceholder from "./components/LogoPlaceholder";
+
 
 import { useState } from "react";
 import "./App.css";
@@ -58,22 +60,6 @@ const steps = [
   },
 ];
 
-
-function LogoPlaceholder() {
-  return (
-    <a className="brand" href="#inicio" aria-label="Ruta Capital, inicio">
-      <span className="brand-mark" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </span>
-      <span className="brand-copy">
-        <strong>RUTA CAPITAL</strong>
-        <small>Orientación y acompañamiento</small>
-      </span>
-    </a>
-  );
-}
 
 function Hero() {
   return (
@@ -536,55 +522,6 @@ function ContactSection() {
 }
 
 
-
-function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="container footer-main">
-        <div className="footer-brand">
-          <LogoPlaceholder />
-          <p>
-            Somos una consultoría privada. No somos autoridad ni
-            estamos afiliados a ninguna autoridad, institución o banco.
-            No prometemos resultados: cada caso se evalúa por separado
-            y te explicamos con claridad si conviene continuar.
-            <br />
-            <br />
-            Lunes a viernes de 9:00 a 19:00, hora de la Ciudad de México.
-          </p>
-        </div>
-
-        <div className="footer-links">
-          <strong>Explora</strong>
-          <a href="#nosotros">Nosotros</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Cómo funciona</a>
-          <a href="#contacto">Contacto</a>
-          <a href="/aviso-de-privacidad">Aviso de privacidad</a>
-          <a href="/terminos-y-condiciones">Términos y condiciones</a>
-        </div>
-
-        <div className="footer-contact">
-          <strong>Hablemos de tu situación</strong>
-          <p>Estamos listos para conocer tu consulta.</p>
-          <a href="#contacto" className="text-link">
-            Contactar con un asesor <span>↗</span>
-          </a>
-        </div>
-      </div>
-
-      <div className="container footer-bottom">
-        <span>
-          © {new Date().getFullYear()} Ruta Capital. Todos los derechos reservados.
-        </span>
-        <a href="#inicio">Volver al inicio ↑</a>
-      </div>
-    </footer>
-  );
-}
-
-
-
 export default function App() {
   return (
     <>
@@ -596,7 +533,6 @@ export default function App() {
         <ProcessSection />
         <ContactSection />
       </main>
-      <Footer />
     </>
   );
 }
