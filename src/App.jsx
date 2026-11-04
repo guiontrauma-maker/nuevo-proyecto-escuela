@@ -60,6 +60,10 @@ const steps = [
 function Hero() {
   return (
     <section className="hero section-anchor" id="inicio">
+      <div className="hero-background" aria-hidden="true">
+        <img src="/images/inicio-hero.png" alt="" />
+      </div>
+
       <div className="hero-glow hero-glow-one" />
       <div className="hero-glow hero-glow-two" />
 
@@ -88,15 +92,6 @@ function Hero() {
             <span className="note-icon">✳</span>
             <span>Atención personalizada y comunicación clara.</span>
           </div>
-        </div>
-
-        {/* ÚNICO CAMBIO: imagen en lugar de la ilustración anterior */}
-        <div className="hero-art hero-art-image">
-          <img
-            src="/images/inicio-hero.png"
-            alt="Imagen principal"
-            className="hero-image"
-          />
         </div>
       </div>
 
