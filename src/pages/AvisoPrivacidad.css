@@ -33,7 +33,7 @@
 }
 
 .privacy-hero::after {
-  content: "RC";
+  content: "SAF";
   position: absolute;
   right: max(3vw, calc((100vw - 1300px) / 2));
   bottom: -85px;
@@ -490,7 +490,7 @@
 
 /* =========================================
    TIPOGRAFÍA MÁS GRANDE
-   AVISO DE PRIVACIDAD — RUTA CAPITAL
+   AVISO DE PRIVACIDAD — SAF
 ========================================= */
 
 /* Etiqueta superior */

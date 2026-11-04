@@ -104,16 +104,16 @@ export default function Diagnostico() {
     ].join("\n");
 
   const submit = () => {
-    const whatsappNumber = "";
+    const whatsappNumber = "5520870671";
 
     if (!whatsappNumber) {
       setError(
-        "El formulario está listo, pero falta configurar el número oficial de WhatsApp de Ruta Capital."
+        "El formulario está listo, pero falta configurar el número oficial de WhatsApp de SAF."
       );
       return;
     }
 
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(buildMessage())}`;
+    const url = `https://wa.me/${5520870671}?text=${encodeURIComponent(buildMessage())}`;
     window.location.href = url;
   };
 
@@ -127,7 +127,7 @@ export default function Diagnostico() {
 <section className="diagnostic-hero">
   <div className="diagnostic-hero-inner">
     <span className="diagnostic-eyebrow">
-      RUTA CAPITAL / DIAGNÓSTICO
+      SAF / DIAGNÓSTICO
     </span>
 
     <h1>
@@ -155,7 +155,7 @@ export default function Diagnostico() {
 
   <div className="diagnostic-visual">
     <div className="diagnostic-visual-top">
-      <span>RUTA CAPITAL</span>
+      <span>SAF</span>
       <span>Orientación inicial</span>
     </div>
 
@@ -460,8 +460,8 @@ export default function Diagnostico() {
       </main>
 
       <footer className="diagnostic-footer">
-        <a href="/" className="diagnostic-footer-brand">RUTA CAPITAL</a>
-        <span>Orientación y acompañamiento</span>
+        <a href="/" className="diagnostic-footer-brand">SAF</a>
+        <span>servicio de asesoria fianciera</span>
       </footer>
     </div>
   );

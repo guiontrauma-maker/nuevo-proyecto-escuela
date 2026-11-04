@@ -7,7 +7,7 @@ const secciones = [
     contenido: (
       <>
         <p>
-          Ruta Capital es el nombre con el que se presenta este sitio web.
+          SAF es el nombre con el que se presenta este sitio web.
           La identidad completa de la persona física o moral responsable
           del tratamiento de los datos y su domicilio deberán indicarse
           antes de publicar este aviso.
@@ -91,7 +91,7 @@ const secciones = [
     contenido: (
       <>
         <p>
-          Ruta Capital no debe utilizar tus datos para finalidades distintas
+          SAF no debe utilizar tus datos para finalidades distintas
           de las informadas en este aviso. Si fuera necesario compartirlos
           con terceros, se deberá explicar quién los recibirá, para qué
           se utilizarán y bajo qué condiciones, así como obtener el
@@ -119,7 +119,7 @@ const secciones = [
           necesario para cumplir las finalidades informadas y atender las
           obligaciones que resulten aplicables. El plazo concreto de
           conservación deberá definirse de acuerdo con las operaciones
-          reales de Ruta Capital.
+          reales de SAF.
         </p>
       </>
     ),
@@ -190,7 +190,7 @@ export default function AvisoPrivacidad() {
         <section className="privacy-hero" id="inicio">
           <div className="privacy-container">
             <span className="privacy-eyebrow">
-              RUTA CAPITAL · TRANSPARENCIA
+              SAF · TRANSPARENCIA
             </span>
 
             <h1>
@@ -252,7 +252,7 @@ export default function AvisoPrivacidad() {
               <p className="privacy-intro-text">
                 Este aviso describe las prácticas previstas para el
                 tratamiento de los datos personales que compartas mediante
-                el sitio de Ruta Capital. Antes de publicarlo como versión
+                el sitio de SAF. Antes de publicarlo como versión
                 definitiva, deberán completarse los datos del responsable
                 y verificarse las prácticas reales de manejo y conservación
                 de la información.
@@ -275,7 +275,7 @@ export default function AvisoPrivacidad() {
               <div className="privacy-closing">
                 <span aria-hidden="true">✳</span>
                 <p>
-                  En Ruta Capital buscamos mantener una comunicación clara
+                  En SAF buscamos mantener una comunicación clara
                   sobre la información que compartes y el uso que se le da.
                 </p>
               </div>

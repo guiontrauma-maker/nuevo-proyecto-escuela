@@ -6,7 +6,7 @@ import LogoPlaceholder from "./components/LogoPlaceholder";
 import { useState } from "react";
 import "./App.css";
 
-const WHATSAPP_NUMBER = ""; // Agrega después el número con código de país, sin + ni espacios.
+const WHATSAPP_NUMBER = "5520870671"; 
 
 const services = [
   {
@@ -344,7 +344,7 @@ function ContactSection() {
 
     if (!WHATSAPP_NUMBER) {
       setError(
-        "El formulario está listo, pero falta configurar el número de WhatsApp de Ruta Capital."
+        "El formulario está listo, pero falta configurar el número de WhatsApp de SAF."
       );
       return;
     }
@@ -355,7 +355,7 @@ function ContactSection() {
     }
 
     const message = [
-      "Hola, Ruta Capital. Me gustaría recibir orientación sobre mi situación.",
+      "Hola, SAF. Me gustaría recibir orientación sobre mi situación.",
       "",
       `Nombre: ${form.nombre}`,
       `Teléfono de contacto: ${form.telefono}`,
@@ -363,7 +363,6 @@ function ContactSection() {
       `Tipo de activo: ${form.tipoActivo}`,
       `Descripción: ${form.descripcion}`,
       "",
-      "Autorizo compartir estos datos mediante WhatsApp para atender mi solicitud.",
     ].join("\n");
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -484,20 +483,6 @@ function ContactSection() {
               </small>
             </label>
           </div>
-
-          <label className="consent-field">
-            <input
-              type="checkbox"
-              name="consentimiento"
-              checked={form.consentimiento}
-              onChange={updateField}
-              required
-            />
-            <span>
-              Autorizo que los datos anteriores se incluyan en un mensaje
-              de WhatsApp para atender mi solicitud.
-            </span>
-          </label>
 
           {error && (
             <p className="form-error" role="alert">

@@ -45,7 +45,7 @@ function Footer() {
 
       <div className={`container ${styles.footerBottom}`}>
         <span>
-          © {new Date().getFullYear()} Ruta Capital. Todos los derechos
+          © {new Date().getFullYear()} SAF. Todos los derechos
           reservados.
         </span>
 

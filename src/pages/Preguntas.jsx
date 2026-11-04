@@ -3,7 +3,7 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import "./Preguntas.css";
 
-const WHATSAPP_NUMBER = ""; // Agrega después el número con código de país, sin + ni espacios.
+const WHATSAPP_NUMBER = "5520870671"; 
 
 const questions = [
   {
@@ -29,7 +29,7 @@ const questions = [
   {
     question: "¿La primera consulta tiene algún costo?",
     answer:
-      "Las condiciones y los posibles costos deben confirmarse directamente con el equipo de Ruta Capital antes de iniciar cualquier servicio.",
+      "Las condiciones y los posibles costos deben confirmarse directamente con el equipo de SAF antes de iniciar cualquier servicio.",
   },
   {
     question: "¿Cuánto tiempo puede tomar el proceso?",
@@ -37,9 +37,9 @@ const questions = [
       "El tiempo depende del tipo de activo, la información disponible y las circunstancias de cada caso.",
   },
   {
-    question: "¿Cómo puedo comunicarme con Ruta Capital?",
+    question: "¿Cómo puedo comunicarme con SAF?",
     answer:
-      "Puedes completar el formulario de esta página para preparar una consulta por WhatsApp cuando esté configurado el número de contacto.",
+      "Puedes completar el formulario de esta página para preparar una consulta por WhatsApp y un asesor se pondra en contacto contigo.",
   },
 ];
 
@@ -90,13 +90,13 @@ function ConsultationForm() {
 
     if (!WHATSAPP_NUMBER.trim()) {
       setNotice(
-        "El formulario está listo, pero Ruta Capital todavía debe configurar su número de WhatsApp para recibir consultas. Tus datos siguen en esta página y no se han enviado."
+        "El formulario está listo, pero SAF todavía debe configurar su número de WhatsApp para recibir consultas. Tus datos siguen en esta página y no se han enviado."
       );
       return;
     }
 
     const message = [
-      "Hola, quiero recibir asesoría de Ruta Capital.",
+      "Hola, quiero recibir asesoría de SAF.",
       "",
       `Nombre: ${form.name}`,
       `Correo electrónico: ${form.email}`,
@@ -426,26 +426,6 @@ export default function Preguntas() {
         </section>
       </main>
 
-      <footer className="questions-footer">
-        <div className="questions-container questions-footer-inner">
-          <a className="questions-footer-brand" href="/">
-            <span className="questions-footer-monogram">RC</span>
-            <span>
-              <strong>RUTA CAPITAL</strong>
-              <small>Orientación y acompañamiento</small>
-            </span>
-          </a>
-
-          <nav aria-label="Navegación del pie de página">
-            <a href="/">Inicio</a>
-            <a href="/preguntas">Preguntas</a>
-            <a href="/#servicios">Servicios</a>
-            <a href="/#contacto">Contacto</a>
-          </nav>
-
-          <p>© {new Date().getFullYear()} Ruta Capital.</p>
-        </div>
-      </footer>
     </>
   );
 }

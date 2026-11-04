@@ -4,7 +4,7 @@ export default function LogoPlaceholder() {
     <a
       className="brand"
       href="/#inicio"
-      aria-label="Ruta Capital, inicio"
+      aria-label="SAF, inicio"
     >
       <span className="brand-mark" aria-hidden="true">
         <span />
@@ -13,8 +13,8 @@ export default function LogoPlaceholder() {
       </span>
 
       <span className="brand-copy">
-        <strong>RUTA CAPITAL</strong>
-        <small>Orientación y acompañamiento</small>
+        <strong>SAF</strong>
+        <small>servicio de asesoria finanicera </small>
       </span>
     </a>
   );

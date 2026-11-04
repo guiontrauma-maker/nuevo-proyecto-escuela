@@ -16,21 +16,13 @@ export default function Navbar() {
           className="brand"
           href="/"
           onClick={closeMenu}
-          aria-label="Ruta Capital, inicio"
+          aria-label="SAF Servicio de Asesoría Financiera - Inicio"
         >
-          <span
-            className="brand-mark logo-placeholder"
-            aria-hidden="true"
-          >
-            <span />
-            <span />
-            <span />
-          </span>
-
-          <span className="brand-copy">
-            <strong>RUTA CAPITAL</strong>
-            <small>Orientación y acompañamiento</small>
-          </span>
+          <img
+            className="brand-logo"
+            src="/images/logo-saf.png"
+            alt="SAF Servicio de Asesoría Financiera"
+          />
         </a>
 
         <button

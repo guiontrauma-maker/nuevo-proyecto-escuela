@@ -4,11 +4,11 @@ import "./TerminosCondiciones.css";
 const secciones = [
   {
     id: "servicio",
-    titulo: "¿Qué es Ruta Capital?",
+    titulo: "¿Qué es SAF?",
     contenido: (
       <>
         <p>
-          Ruta Capital es una iniciativa privada de orientación y
+          SAF es una iniciativa privada de orientación y
           acompañamiento para personas que desean explorar opciones
           relacionadas con sus fondos, recursos, inversiones, cuentas,
           saldos u otros activos.
@@ -46,7 +46,7 @@ const secciones = [
     contenido: (
       <>
         <p>
-          Cada situación es diferente. Ruta Capital no garantiza la
+          Cada situación es diferente. SAF no garantiza la
           recuperación de dinero, fondos, inversiones, bienes ni ningún
           otro activo, ni promete un resultado, plazo o desenlace específico.
         </p>
@@ -149,7 +149,7 @@ const secciones = [
           propias condiciones y políticas.
         </p>
         <p>
-          Ruta Capital no controla la disponibilidad ni todos los aspectos
+          SAF no controla la disponibilidad ni todos los aspectos
           del funcionamiento de plataformas externas. Si decides utilizarlas,
           revisa sus condiciones antes de compartir información.
         </p>
@@ -220,7 +220,7 @@ export default function TerminosCondiciones() {
         <section className="terms-hero">
           <div className="terms-container">
             <span className="terms-eyebrow">
-              RUTA CAPITAL · CLARIDAD Y CONFIANZA
+              SAF · CLARIDAD Y CONFIANZA
             </span>
 
             <h1>
@@ -277,7 +277,7 @@ export default function TerminosCondiciones() {
 
               <p className="terms-intro">
                 Estos términos describen las condiciones generales de uso
-                del sitio web de Ruta Capital. Al navegar por la página,
+                del sitio web de SAF. Al navegar por la página,
                 puedes consultar su contenido; el envío de una consulta
                 no implica por sí solo la contratación de un servicio.
                 Cualquier servicio específico deberá tener su propio alcance
