@@ -1,12 +1,10 @@
+
 import Navbar from "./components/Navbar";
 import "./HeroMotion.css";
-import LogoPlaceholder from "./components/LogoPlaceholder";
-
-
 import { useState } from "react";
 import "./App.css";
 
-const WHATSAPP_NUMBER = "5520870671"; 
+const WHATSAPP_NUMBER = "5520870671";
 
 const services = [
   {
@@ -31,7 +29,6 @@ const services = [
     tag: "Soluciones a tu medida",
   },
 ];
-
 
 const steps = [
   {
@@ -59,7 +56,6 @@ const steps = [
       "Te orientamos durante las gestiones acordadas, sin garantizar la recuperación de los fondos.",
   },
 ];
-
 
 function Hero() {
   return (
@@ -94,68 +90,13 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-art" aria-label="Ilustración de orientación y crecimiento">
-          <div className="art-orbit orbit-outer" />
-          <div className="art-orbit orbit-inner" />
-
-          <div className="art-sun">
-            <span>✳</span>
-          </div>
-
-          <div className="art-path">
-            <span className="path-point point-one" />
-            <span className="path-point point-two" />
-            <span className="path-point point-three" />
-          </div>
-
-          <div className="art-card art-card-main">
-            <div className="art-card-top">
-              <span className="art-mini-icon">↗</span>
-              <span>RUTA DE POSIBILIDADES</span>
-            </div>
-            <div className="art-chart">
-              <span className="chart-line chart-line-one" />
-              <span className="chart-line chart-line-two" />
-              <span className="chart-line chart-line-three" />
-              <span className="chart-line chart-line-four" />
-              <svg viewBox="0 0 320 130" role="img" aria-label="Línea ilustrativa de crecimiento">
-                <defs>
-                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#EC9C9D" stopOpacity=".38" />
-                    <stop offset="100%" stopColor="#EC9C9D" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M8 110 C40 105, 44 70, 82 83 S132 95, 157 57 S211 72, 239 35 S283 42, 312 9 L312 130 L8 130 Z"
-                  fill="url(#chartFill)"
-                />
-                <path
-                  d="M8 110 C40 105, 44 70, 82 83 S132 95, 157 57 S211 72, 239 35 S283 42, 312 9"
-                  fill="none"
-                  stroke="#AA7F66"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-                <circle cx="312" cy="9" r="5" fill="#443025" />
-              </svg>
-            </div>
-            <div className="art-card-bottom">
-              <span>Explorar</span>
-              <span className="art-arrow">↗</span>
-            </div>
-          </div>
-
-          <div className="floating-chip chip-top">
-            <span>✦</span> Nuevas posibilidades
-          </div>
-
-          <div className="floating-chip chip-bottom">
-            <span className="chip-check">✓</span>
-            Un paso a la vez
-          </div>
-
-          <div className="art-decoration decoration-one">✳</div>
-          <div className="art-decoration decoration-two">✦</div>
+        {/* ÚNICO CAMBIO: imagen en lugar de la ilustración anterior */}
+        <div className="hero-art hero-art-image">
+          <img
+            src="/images/inicio-hero.png"
+            alt="Imagen principal"
+            className="hero-image"
+          />
         </div>
       </div>
 
@@ -257,7 +198,6 @@ function ServicesSection() {
   );
 }
 
-
 function ProcessSection() {
   return (
     <section className="process-section section-anchor" id="proceso">
@@ -284,9 +224,7 @@ function ProcessSection() {
         <div className="process-list">
           {steps.map((step) => (
             <article className="process-item" key={step.number}>
-              <div className="process-number">
-                {step.number}
-              </div>
+              <div className="process-number">{step.number}</div>
 
               <div className="process-item-copy">
                 <h3>{step.title}</h3>
@@ -314,7 +252,6 @@ function ProcessSection() {
     </section>
   );
 }
-
 
 function ContactSection() {
   const [form, setForm] = useState({
@@ -505,7 +442,6 @@ function ContactSection() {
     </section>
   );
 }
-
 
 export default function App() {
   return (
