@@ -1,7 +1,6 @@
 
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import "./HeroMotion.css";
-import { useState } from "react";
 import "./App.css";
 
 const WHATSAPP_NUMBER = "5520870671";
@@ -9,83 +8,132 @@ const WHATSAPP_NUMBER = "5520870671";
 const services = [
   {
     icon: "🔎",
-    title: "Exploración de opciones",
+    number: "01",
+    title: "Análisis de tu situación",
     description:
-      "Revisamos contigo la información de tu caso para identificar posibles caminos y alternativas.",
-    tag: "Orientación personalizada",
+      "Revisamos contigo lo ocurrido, cómo se realizó el movimiento de dinero y qué información tienes disponible para identificar posibles alternativas.",
+    className: "service-explore",
   },
   {
     icon: "🧭",
-    title: "Acompañamiento",
+    number: "02",
+    title: "Orientación para intentar recuperar tu dinero",
     description:
-      "Te ayudamos a comprender los siguientes pasos y a organizar la información necesaria.",
-    tag: "Atención cercana",
+      "Exploramos contigo las opciones que podrían existir para buscar la recuperación de tus recursos, de acuerdo con las características de tu caso.",
+    className: "service-guide",
   },
   {
     icon: "🤝",
-    title: "Alternativas para tus activos",
+    number: "03",
+    title: "Acompañamiento durante el proceso",
     description:
-      "Analizamos contigo las posibilidades disponibles según las características de tu situación.",
-    tag: "Soluciones a tu medida",
+      "Te orientamos sobre los pasos que podrías considerar y te ayudamos a comprender las alternativas disponibles para tu situación.",
+    className: "service-assets",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Evaluación inicial",
+    title: "Cuéntanos qué ocurrió",
     description:
-      "Conocemos tu situación y los detalles generales para comprender qué ocurrió.",
+      "Escuchamos tu experiencia y conocemos cómo sucedió la estafa, el fraude o la pérdida de tus recursos.",
   },
   {
     number: "02",
-    title: "Revisión de la información",
+    title: "Revisamos tu información",
     description:
-      "Revisamos los datos y documentos disponibles para identificar aspectos relevantes de tu caso.",
+      "Analizamos los datos, comprobantes y documentos que tengas disponibles para comprender mejor tu situación.",
   },
   {
     number: "03",
-    title: "Alternativas para tu caso",
+    title: "Identificamos posibles alternativas",
     description:
-      "Te explicamos las opciones que podrían explorarse, sus limitaciones y los siguientes pasos.",
+      "Exploramos las opciones que podrían estar disponibles y te explicamos sus posibilidades y limitaciones.",
   },
   {
     number: "04",
-    title: "Acompañamiento y seguimiento",
+    title: "Te orientamos en los siguientes pasos",
     description:
-      "Te orientamos durante las gestiones acordadas, sin garantizar la recuperación de los fondos.",
+      "Te brindamos acompañamiento y orientación durante las etapas que se hayan acordado para tu caso.",
   },
 ];
 
+function useReveal() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".saf-home .reveal");
+
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+}
+
+function EmojiTicker() {
+  const items = [
+    "ORIENTACIÓN FINANCIERA",
+    "ANÁLISIS DE TU SITUACIÓN",
+    "ALTERNATIVAS PARA TUS RECURSOS",
+    "ACOMPAÑAMIENTO PERSONALIZADO",
+    "UN PASO A LA VEZ",
+  ];
+
+  return (
+    <div className="emoji-ticker" aria-label="Enfoque de SAF">
+      <div className="ticker-track">
+        {[...items, ...items].map((item, index) => (
+          <span className="ticker-item" key={`${item}-${index}`}>
+            {item}
+            <span className="ticker-star">✳</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+
 function Hero() {
   return (
-    <section className="hero section-anchor" id="inicio">
-      <div className="hero-background" aria-hidden="true">
-        <img src="/images/inicio-hero.png" alt="" />
-      </div>
+    <section className="saf-hero" id="inicio">
+      <div className="hero-orbit hero-orbit-one" />
+      <div className="hero-orbit hero-orbit-two" />
 
-      <div className="hero-glow hero-glow-one" />
-      <div className="hero-glow hero-glow-two" />
-
-      <div className="container hero-grid">
-        <div className="hero-copy">
-          <div className="eyebrow">
-            <span className="status-dot" />
-            ORIENTACIÓN PARA TUS ACTIVOS
+      <div className="container hero-layout">
+        <div className="hero-content">
+          <div className="hero-label">
+            <span className="hero-label-dot" />
+            SERVICIO DE ASESORÍA FINANCIERA
           </div>
 
           <h1>
             Cada situación
+            tiene un camino
             <br />
-            tiene un camino.
-            <br />
-            <span>Exploremos el tuyo.</span>
+            <span>Exploremos el tuyo</span>
           </h1>
 
           <p className="hero-description">
             Te acompañamos a explorar alternativas para tus activos,
-            comprender tus opciones y encontrar posibles caminos según
-            tu situación.
+            comprender tus opciones y encontrar posibles caminos
+            según tu situación.
           </p>
 
           <div className="hero-note">
@@ -93,57 +141,108 @@ function Hero() {
             <span>Atención personalizada y comunicación clara.</span>
           </div>
         </div>
+
+        {/* ÁREA DE IMAGEN DEL HERO */}
+        <div className="hero-visual">
+          <div className="hero-image-frame">
+            <img
+              src="/images/inicio-hero.png"
+              alt="Imagen representativa del servicio de asesoría financiera"
+            />
+          </div>
+
+          <div className="hero-floating-note">
+            <span>✳</span>
+            <div>
+              <strong>SAF</strong>
+              <small>Orientación personalizada</small>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <a className="scroll-cue" href="#nosotros">
-        <span /> Descubre cómo podemos ayudarte
-      </a>
+      <div className="hero-bottomline container">
+        <span>ATENCIÓN PERSONALIZADA</span>
+        <span className="hero-bottom-symbol">✳</span>
+        <a href="#enfoque">CONOCE NUESTRO ENFOQUE ↓</a>
+      </div>
     </section>
   );
 }
 
+
 function IntroSection() {
   return (
-    <section className="intro-section section-anchor" id="nosotros">
-      <div className="container intro-grid">
-        <div className="section-heading">
-          <span className="eyebrow">UN ENFOQUE DIFERENTE</span>
-          <h2>
-            Entender tu situación
-            <br />
-            es el primer paso
-            <span className="heading-accent">.</span>
-          </h2>
+    <section className="intro-section section-anchor" id="enfoque">
+      <div className="container">
+        <div className="intro-top reveal">
+          <div>
+            <span className="eyebrow">CUANDO ALGO NO SALE COMO ESPERABAS</span>
+            <h2>
+              No estás obligado
+              <br />
+              a tener todas las <em>respuestas.</em>
+            </h2>
+          </div>
+
+          <div className="intro-top-copy">
+            <span className="intro-quote">“</span>
+            <p>
+              Si realizaste una transferencia, invertiste en una plataforma
+              o entregaste dinero y después descubriste que podría tratarse
+              de una estafa, es normal que tengas dudas sobre qué hacer.
+              En SAF te escuchamos y te ayudamos a explorar posibles
+              alternativas.
+            </p>
+          </div>
         </div>
 
-        <div className="intro-copy">
-          <p>
-            Sabemos que cada situación relacionada con tus activos es
-            diferente. Por eso, creemos en escuchar primero, comprender
-            tus necesidades y explorar las alternativas disponibles.
-          </p>
-          <a className="text-link" href="#proceso">
-            Conoce nuestra forma de trabajar <span>↗</span>
-          </a>
-        </div>
-      </div>
+        <div className="editorial-bento">
+          <article className="bento-card bento-large reveal">
+            <div className="bento-large-top">
+              <span>01 / COMPRENDER</span>
+              <span>🔎</span>
+            </div>
+            <div className="bento-large-content">
+              <h3>Primero queremos conocer lo que te sucedió.</h3>
+              <p>
+                Escuchamos tu experiencia y revisamos la información
+                disponible para entender las características de tu caso.
+              </p>
+            </div>
+            <span className="bento-decoration">SAF.</span>
+          </article>
 
-      <div className="container values-grid">
-        <article className="value-card">
-          <span className="value-icon">◉</span>
-          <h3>Escuchamos</h3>
-          <p>Conocemos tu situación antes de hablar de posibles opciones.</p>
-        </article>
-        <article className="value-card">
-          <span className="value-icon">✳</span>
-          <h3>Explicamos</h3>
-          <p>Buscamos que comprendas la información y los pasos que puedes explorar.</p>
-        </article>
-        <article className="value-card">
-          <span className="value-icon">↗</span>
-          <h3>Te acompañamos</h3>
-          <p>Te orientamos durante el proceso de exploración de alternativas.</p>
-        </article>
+          <article className="bento-card bento-clarity reveal">
+            <span className="bento-mini-label">02 / INFORMACIÓN</span>
+            <span className="bento-big-emoji">📂</span>
+            <h3>Revisamos lo que tienes disponible.</h3>
+            <p>
+              Comprobantes, movimientos, conversaciones y otros datos
+              relacionados con lo ocurrido.
+            </p>
+          </article>
+
+          <article className="bento-card bento-support reveal">
+            <span className="bento-mini-label">03 / ALTERNATIVAS</span>
+            <div className="support-illustration">
+              <span>💡</span>
+            </div>
+            <h3>Exploramos posibles caminos para tu situación.</h3>
+          </article>
+
+          <article className="bento-card bento-statement reveal">
+            <span className="bento-statement-symbol">✳</span>
+            <p>
+              Escuchar.
+              <br />
+              Analizar.
+              <br />
+              Orientar.
+            </p>
+            <span className="bento-mini-label">NUESTRO ENFOQUE</span>
+          </article>
+        </div>
       </div>
     </section>
   );
@@ -151,43 +250,41 @@ function IntroSection() {
 
 function ServicesSection() {
   return (
-    <section className="services-section section-anchor" id="servicios">
+    <section className="services-section" id="servicios">
       <div className="container">
-        <div className="section-topline">
-          <div className="section-heading">
-            <span className="eyebrow">CÓMO PODEMOS APOYARTE</span>
-            <h2>
-              Opciones para avanzar
-              <span className="heading-accent">.</span>
-            </h2>
-          </div>
-          <p className="section-side-copy">
-            Un acompañamiento centrado en tu situación, tus dudas y
-            las alternativas que puedan estar disponibles.
-          </p>
-        </div>
-
-        <div className="services-grid">
+        <div className="service-showcase">
           {services.map((service) => (
-            <article className="service-card" key={service.title}>
-              <div className="service-card-top">
-                <span className="service-icon">{service.icon}</span>
-                <span className="service-arrow">↗</span>
+            <article
+              className={`service-panel ${service.className} reveal`}
+              key={service.number}
+            >
+              <div className="service-panel-top">
+                <span>{service.number} / SAF</span>
+                <span className="service-panel-icon">{service.icon}</span>
               </div>
-              <span className="service-tag">{service.tag}</span>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-              <a href="#contacto" className="service-link">
-                Consultar opciones <span>→</span>
-              </a>
+
+              <div className="service-panel-content">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+
+                <a href="#contacto">
+                  Cuéntanos tu situación <span>↗</span>
+                </a>
+              </div>
+
+              <span className="service-watermark">{service.number}</span>
             </article>
           ))}
         </div>
 
-        <p className="section-disclaimer">
-          Las alternativas dependen de la información y las características
-          de cada situación. La orientación inicial no garantiza un resultado.
-        </p>
+        <div className="service-disclaimer">
+          <span>✳</span>
+          <p>
+            La posibilidad de recuperar los recursos depende de las
+            circunstancias de cada situación. No podemos garantizar
+            la recuperación del dinero ni un resultado determinado.
+          </p>
+        </div>
       </div>
     </section>
   );
@@ -196,53 +293,63 @@ function ServicesSection() {
 function ProcessSection() {
   return (
     <section className="process-section section-anchor" id="proceso">
-      <div className="container process-layout">
-        <div className="process-intro">
-          <span className="eyebrow">
-            <span className="process-eyebrow-dot" />
-            CÓMO TRABAJAMOS
-          </span>
+      <div className="container">
+        <div className="process-top reveal">
+          <div>
+            <span className="eyebrow">¿QUÉ SUCEDE DESPUÉS DE CONTACTARNOS?</span>
+            <h2>
+              Te acompañamos
+              <br />
+              <em>paso a paso.</em>
+            </h2>
+          </div>
 
-          <h2>
-            Un proceso claro,
-            <br />
-            <span>paso a paso.</span>
-          </h2>
-
-          <p>
-            Sabemos que enfrentar una posible estafa puede generar
-            incertidumbre. Por eso, te explicamos cada etapa con
-            claridad para que puedas tomar decisiones informadas.
-          </p>
+          <div className="process-top-copy">
+            <span className="process-big-emoji">🧩</span>
+            <p>
+              Conocemos tu situación, revisamos la información que tengas
+              y exploramos contigo qué alternativas podrían considerarse.
+            </p>
+          </div>
         </div>
 
-        <div className="process-list">
-          {steps.map((step) => (
-            <article className="process-item" key={step.number}>
-              <div className="process-number">{step.number}</div>
+        <div className="process-route">
+          <div className="process-route-line" />
 
-              <div className="process-item-copy">
+          {steps.map((step, index) => (
+            <article
+              className={`process-step reveal process-step-${index + 1}`}
+              key={step.number}
+            >
+              <div className="process-step-marker">
+                <span>{step.number}</span>
+              </div>
+
+              <div className="process-step-card">
+                <div className="process-step-card-top">
+                  <span>{step.number} / ETAPA</span>
+                  <span className="process-step-emoji">{step.icon}</span>
+                </div>
                 <h3>{step.title}</h3>
                 <p>{step.description}</p>
               </div>
-
-              <span className="process-chevron" aria-hidden="true">
-                ↗
-              </span>
             </article>
           ))}
         </div>
 
-        <div className="process-action">
-          <a className="process-action-button" href="#contacto">
-            Comenzar con la evaluación <span>↗</span>
-          </a>
-
-          <p>
-            Cada caso es diferente. La evaluación no garantiza la
-            recuperación del dinero.
-          </p>
+        <div className="process-final reveal">
+          <span>🌱</span>
+          <div>
+            <strong>Comencemos por conocer lo que ocurrió.</strong>
+            <p>Podemos conversar sobre tu situación.</p>
+          </div>
+          <a href="#contacto">Contactar <span>↗</span></a>
         </div>
+
+        <p className="process-disclaimer">
+          La orientación de SAF no garantiza la recuperación del dinero.
+          Las alternativas dependen de las circunstancias de cada caso.
+        </p>
       </div>
     </section>
   );
@@ -275,26 +382,23 @@ function ContactSection() {
     event.preventDefault();
 
     if (!WHATSAPP_NUMBER) {
-      setError(
-        "El formulario está listo, pero falta configurar el número de WhatsApp de SAF."
-      );
+      setError("Falta configurar el número de WhatsApp de SAF.");
       return;
     }
 
     if (!form.consentimiento) {
-      setError("Necesitamos tu autorización para compartir estos datos mediante WhatsApp.");
+      setError("Por favor, autoriza el uso de los datos de tu mensaje.");
       return;
     }
 
     const message = [
-      "Hola, SAF. Me gustaría recibir orientación sobre mi situación.",
+      "Hola, SAF. Me gustaría recibir orientación sobre una situación en la que perdí dinero.",
       "",
       `Nombre: ${form.nombre}`,
-      `Teléfono de contacto: ${form.telefono}`,
+      `Teléfono: ${form.telefono}`,
       `Correo: ${form.correo || "No proporcionado"}`,
-      `Tipo de activo: ${form.tipoActivo}`,
+      `Situación: ${form.tipoActivo}`,
       `Descripción: ${form.descripcion}`,
-      "",
     ].join("\n");
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -305,42 +409,30 @@ function ContactSection() {
   return (
     <section className="contact-section section-anchor" id="contacto">
       <div className="container contact-layout">
-        <div className="contact-copy">
+        <div className="contact-information reveal">
           <span className="eyebrow">ESTAMOS PARA ESCUCHARTE</span>
           <h2>
-            Tu siguiente paso
+            Hablemos de
             <br />
-            comienza aquí<span className="heading-accent">.</span>
+            <em>lo que te sucedió.</em>
           </h2>
+
           <p>
-            Cuéntanos un poco sobre tu situación. La información nos
-            ayudará a comprender tu solicitud y preparar una conversación
-            más útil para ti.
+            Si perdiste dinero por una estafa, un fraude o una situación
+            relacionada con una inversión, cuéntanos brevemente qué ocurrió.
+            Queremos conocer tu caso para orientarte sobre las posibles
+            alternativas que podrías explorar.
           </p>
 
-          <div className="contact-promise">
-            <span className="promise-icon">✳</span>
-            <div>
-              <strong>Tu información importa</strong>
-              <p>
-                Comparte únicamente los datos necesarios para que podamos
-                ponernos en contacto contigo. No incluyas contraseñas,
-                claves de acceso ni datos bancarios confidenciales.
-              </p>
-            </div>
-          </div>
-
-          <div className="contact-decoration" aria-hidden="true">
-            <span>R</span>
-            <span>C</span>
-          </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form reveal" onSubmit={handleSubmit}>
           <div className="form-heading">
-            <span className="form-kicker">PRIMER CONTACTO</span>
-            <h3>Cuéntanos tu caso</h3>
-            <p>Completa los campos para preparar tu mensaje.</p>
+            <span className="eyebrow">PRIMER CONTACTO ✳</span>
+            <h3>Cuéntanos qué ocurrió</h3>
+            <p>
+              Completa estos datos para preparar tu mensaje de WhatsApp.
+            </p>
           </div>
 
           <div className="form-grid">
@@ -382,30 +474,48 @@ function ContactSection() {
             </label>
 
             <label className="field field-full">
-              <span>¿Sobre qué tipo de activo necesitas orientación? *</span>
+              <span>¿Qué tipo de situación viviste? *</span>
               <select
                 name="tipoActivo"
                 value={form.tipoActivo}
                 onChange={updateField}
                 required
               >
-                <option value="">Selecciona una opción</option>
-                <option value="Fondos o recursos">Fondos o recursos</option>
-                <option value="Inversiones">Inversiones</option>
-                <option value="Cuentas o saldos">Cuentas o saldos</option>
-                <option value="Bienes o propiedades">Bienes o propiedades</option>
-                <option value="Otro tipo de activo">Otro tipo de activo</option>
-                <option value="Prefiero explicarlo">Prefiero explicarlo</option>
+                <option value="">Selecciona la opción más cercana a tu caso</option>
+                <option value="Transferencia bancaria por una posible estafa">
+                  Realicé una transferencia por una posible estafa
+                </option>
+                <option value="Fraude relacionado con una inversión">
+                  Perdí dinero en una inversión
+                </option>
+                <option value="Plataforma de inversión que no permite retirar dinero">
+                  Una plataforma no me permite retirar mi dinero
+                </option>
+                <option value="Estafa relacionada con criptomonedas o Forex">
+                  Estafa relacionada con criptomonedas o Forex
+                </option>
+                <option value="Fraude mediante compras o ventas por internet">
+                  Fraude en una compra o venta por internet
+                </option>
+                <option value="Cargo o movimiento de dinero que no reconozco">
+                  Tengo cargos o movimientos que no reconozco
+                </option>
+                <option value="Dinero entregado a una persona o empresa">
+                  Entregué dinero a una persona o empresa y no obtuve lo acordado
+                </option>
+                <option value="Otra situación relacionada con pérdida de dinero">
+                  Otra situación relacionada con pérdida de dinero
+                </option>
               </select>
             </label>
 
             <label className="field field-full">
-              <span>Cuéntanos brevemente tu situación *</span>
+              <span>Cuéntanos brevemente qué sucedió *</span>
               <textarea
                 name="descripcion"
                 value={form.descripcion}
                 onChange={updateField}
-                placeholder="¿Qué ocurrió y qué te gustaría explorar?"
+                placeholder="Por ejemplo: cómo realizaste el pago, cuándo ocurrió y qué pasó después..."
                 rows="4"
                 maxLength="1500"
                 required
@@ -416,21 +526,22 @@ function ContactSection() {
             </label>
           </div>
 
+
           {error && (
             <p className="form-error" role="alert">
               {error}
             </p>
           )}
 
-          <button className="button button-whatsapp" type="submit">
-            <span aria-hidden="true">◉</span>
-            Preparar mensaje por WhatsApp
-            <span className="whatsapp-arrow">↗</span>
+          <button className="form-submit" type="submit">
+            <span>💬</span>
+            Recibir orientación mediante WhatsApp
+            <span className="submit-arrow">↗</span>
           </button>
 
           <p className="form-footnote">
             WhatsApp se abrirá para que revises el mensaje y decidas enviarlo.
-            Tus datos no se envían automáticamente desde esta página.
+            El envío no se realiza automáticamente.
           </p>
         </form>
       </div>
@@ -438,17 +549,24 @@ function ContactSection() {
   );
 }
 
+import Footer from "./components/Footer";
+
 export default function App() {
+  useReveal();
+
   return (
     <>
       <Navbar />
-      <main>
+
+      <main className="saf-home">
         <Hero />
+        <EmojiTicker />
         <IntroSection />
         <ServicesSection />
         <ProcessSection />
         <ContactSection />
       </main>
+
     </>
   );
 }

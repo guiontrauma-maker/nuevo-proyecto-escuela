@@ -1,12 +1,13 @@
 
-/* ========================================
+/* =========================================
    SAF — DIAGNÓSTICO
-   Paleta verde bosque, salvia y crema
-======================================== */
+   Identidad editorial + experiencia interactiva
+========================================= */
 
 .diagnostic-page {
   --diag-forest: #0C3B2E;
   --diag-sage: #6D9773;
+  --diag-gold: #BB8A52;
   --diag-pale: #E1E9DF;
   --diag-cream: #F8F6F0;
   --diag-white: #FFFFFF;
@@ -14,11 +15,10 @@
   --diag-text: #43594A;
   --diag-line: #D5E0D4;
   --diag-soft: #F0F4ED;
-  --diag-dark-line: rgba(225, 233, 223, 0.16);
 
+  min-height: 100vh;
   color: var(--diag-forest);
   background: var(--diag-cream);
-  min-height: 100vh;
 }
 
 .diagnostic-page *,
@@ -27,89 +27,111 @@
   box-sizing: border-box;
 }
 
-/* ========================================
-   HERO PRINCIPAL
-======================================== */
+/* =========================================
+   HERO — COMPOSICIÓN EDITORIAL
+========================================= */
 
 .diagnostic-hero {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.82fr);
+  grid-template-columns: minmax(0, 1fr) minmax(390px, .85fr);
   align-items: center;
-  gap: clamp(40px, 6vw, 84px);
-  min-height: 650px;
-  padding: 84px max(7%, calc((100vw - 1200px) / 2));
+  gap: clamp(45px, 7vw, 100px);
+  min-height: 690px;
+  padding: 85px max(7%, calc((100vw - 1250px) / 2)) 105px;
+  overflow: hidden;
   background: var(--diag-forest);
   color: var(--diag-cream);
+}
+
+.diagnostic-hero-pattern {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: .5;
+  background-image:
+    linear-gradient(rgba(225,233,223,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(225,233,223,.035) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: linear-gradient(90deg, black, transparent 85%);
 }
 
 .diagnostic-hero::before {
   content: "";
   position: absolute;
   z-index: -1;
-  top: -250px;
-  left: 32%;
-  width: 540px;
-  height: 540px;
-  border: 1px solid rgba(225, 233, 223, 0.07);
+  width: 650px;
+  height: 650px;
+  top: -390px;
+  left: 35%;
+  border: 1px solid rgba(225,233,223,.13);
   border-radius: 50%;
-  pointer-events: none;
+  box-shadow:
+    0 0 0 60px rgba(225,233,223,.025),
+    0 0 0 120px rgba(225,233,223,.02);
 }
 
 .diagnostic-hero::after {
   content: "";
   position: absolute;
   z-index: -1;
-  right: -150px;
-  bottom: -250px;
-  width: 450px;
-  height: 450px;
-  border: 1px solid rgba(109, 151, 115, 0.18);
+  right: -120px;
+  bottom: -300px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(187,138,82,.23);
   border-radius: 50%;
-  pointer-events: none;
+  box-shadow: 0 0 0 55px rgba(187,138,82,.035);
 }
 
 .diagnostic-hero-inner {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 590px;
+  z-index: 2;
+  max-width: 650px;
 }
 
 .diagnostic-eyebrow {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--diag-muted);
-  font-size: 0.72rem;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: .16em;
   line-height: 1.7;
 }
 
+.diagnostic-eyebrow::before {
+  content: "";
+  width: 27px;
+  height: 2px;
+  background: var(--diag-gold);
+}
+
 .diagnostic-hero .diagnostic-eyebrow {
-  color: var(--diag-sage);
+  color: #C5D5C3;
 }
 
 .diagnostic-hero h1 {
-  margin: 26px 0 24px;
+  margin: 28px 0 25px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.1rem, 5.1vw, 5rem);
+  font-size: clamp(55px, 5.6vw, 79px);
   font-weight: 400;
-  letter-spacing: -0.06em;
-  line-height: 1.02;
+  letter-spacing: -.065em;
+  line-height: 1.04;
 }
 
 .diagnostic-hero h1 span {
-  color: var(--diag-sage);
+  color: #C4D6B9;
   font-style: italic;
 }
 
 .diagnostic-hero-inner > p {
-  max-width: 490px;
+  max-width: 535px;
   margin: 0;
-  color: rgba(248, 246, 240, 0.77);
-  font-size: 1rem;
+  color: rgba(248,246,240,.77);
+  font-size: 18px;
   line-height: 1.9;
 }
 
@@ -117,202 +139,534 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  min-height: 53px;
-  margin-top: 28px;
-  padding: 15px 21px;
-  border: 1px solid var(--diag-sage);
+  gap: 30px;
+  min-height: 58px;
+  margin-top: 31px;
+  padding: 16px 22px;
+  border: 1px solid var(--diag-gold);
   border-radius: 3px;
-  background: var(--diag-sage);
+  background: var(--diag-gold);
   color: var(--diag-forest);
-  font-size: 0.9rem;
-  font-weight: 750;
+  font-size: 15px;
+  font-weight: 800;
   text-decoration: none;
-  transition:
-    transform 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
+  transition: transform .25s ease, background .25s ease;
 }
 
 .diagnostic-hero-button:hover {
-  transform: translateY(-2px);
-  border-color: var(--diag-pale);
-  background: var(--diag-pale);
+  transform: translateY(-3px);
+  background: #D2A36C;
 }
 
 .diagnostic-hero-button span {
-  font-size: 1.1rem;
+  font-size: 21px;
 }
 
 .diagnostic-note {
-  max-width: 450px;
-  margin-top: 22px;
-  color: rgba(248, 246, 240, 0.68);
-  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 460px;
+  margin-top: 24px;
+  color: rgba(248,246,240,.65);
+  font-size: 13px;
   line-height: 1.8;
 }
 
-/* ========================================
-   TARJETA DE ANÁLISIS
-======================================== */
-
-.diagnostic-visual {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 460px;
-  min-height: 440px;
-  justify-self: end;
-  padding: clamp(25px, 3vw, 38px);
-  border: 1px solid var(--diag-line);
-  border-radius: 3px;
-  background: var(--diag-cream);
-  color: var(--diag-forest);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.2);
+.diagnostic-note::before {
+  content: "i";
+  display: grid;
+  place-items: center;
+  flex: 0 0 21px;
+  width: 21px;
+  height: 21px;
+  border: 1px solid rgba(248,246,240,.4);
+  border-radius: 50%;
+  font-family: Georgia, serif;
 }
 
-.diagnostic-visual-top {
+/* =========================================
+   ARTE GRÁFICO DEL HERO
+========================================= */
+
+.diagnostic-hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-self: end;
+  width: min(100%, 490px);
+  aspect-ratio: 1 / 1.04;
+}
+
+.diagnostic-art-orbit {
+  position: absolute;
+  border: 1px solid rgba(225,233,223,.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.diagnostic-art-orbit-one {
+  width: 96%;
+  height: 96%;
+  animation: diagnostic-orbit 45s linear infinite;
+}
+
+.diagnostic-art-orbit-two {
+  width: 76%;
+  height: 76%;
+  border-style: dashed;
+  border-color: rgba(187,138,82,.35);
+  animation: diagnostic-orbit 65s linear infinite reverse;
+}
+
+@keyframes diagnostic-orbit {
+  to { transform: rotate(360deg); }
+}
+
+.diagnostic-art-caption {
+  position: absolute;
+  top: 2%;
+  left: 5%;
+  right: 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  padding-bottom: 0;
-  color: var(--diag-forest);
-  font-size: 0.65rem;
+  color: rgba(248,246,240,.67);
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: .16em;
 }
 
-.diagnostic-visual-top span:last-child {
-  color: var(--diag-muted);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0;
-  text-align: right;
-}
-
-.diagnostic-visual-line {
-  width: 100%;
-  height: 1px;
-  margin: 23px 0 30px;
-  background: var(--diag-line);
-}
-
-.diagnostic-visual-label {
-  color: var(--diag-sage);
-  font-size: 0.65rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  line-height: 1.7;
-}
-
-.diagnostic-visual h2 {
-  margin: 17px 0 27px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3vw, 2.65rem);
-  font-weight: 400;
-  letter-spacing: -0.05em;
-  line-height: 1.13;
-}
-
-.diagnostic-visual-items {
-  display: grid;
-  gap: 0;
-}
-
-.diagnostic-visual-items > div {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  min-height: 58px;
-  border-top: 1px solid var(--diag-line);
-  color: var(--diag-text);
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-
-.diagnostic-visual-icon {
+.diagnostic-art-caption span:first-child {
   display: grid;
   place-items: center;
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
-  border: 1px solid var(--diag-line);
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(248,246,240,.4);
   border-radius: 50%;
-  background: var(--diag-soft);
+  color: var(--diag-cream);
+  font-size: 12px;
+}
+
+.diagnostic-art-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 77%;
+  min-height: 355px;
+  padding: 35px;
+  border: 1px solid rgba(12,59,46,.1);
+  border-radius: 3px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.6), transparent 65%),
+    var(--diag-cream);
   color: var(--diag-forest);
-  font-size: 1rem;
+  box-shadow: 0 30px 85px rgba(0,0,0,.25);
+  transform: rotate(3deg);
+  transition: transform .35s ease;
 }
 
-.diagnostic-visual-bottom {
-  margin-top: auto;
-  padding-top: 21px;
+.diagnostic-art-main:hover {
+  transform: rotate(0deg) translateY(-5px);
+}
+
+.diagnostic-art-symbol {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  color: var(--diag-gold);
+  font-size: 35px;
+}
+
+.diagnostic-art-overline {
+  color: var(--diag-sage);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+.diagnostic-art-main h2 {
+  margin: 23px 0 35px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 3.4vw, 45px);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+
+.diagnostic-art-main h2 em {
+  color: var(--diag-sage);
+  font-weight: 400;
+}
+
+.diagnostic-art-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid var(--diag-line);
   color: var(--diag-muted);
-  font-size: 0.74rem;
-  line-height: 1.7;
+  font-size: 10px;
 }
 
-/* ========================================
-   ENCABEZADO DEL FORMULARIO
-======================================== */
+.diagnostic-art-bars {
+  display: flex;
+  align-items: end;
+  gap: 3px;
+  height: 24px;
+}
+
+.diagnostic-art-bars span {
+  display: block;
+  width: 4px;
+  height: 30%;
+  border-radius: 3px;
+  background: var(--diag-sage);
+}
+
+.diagnostic-art-bars span:nth-child(2n) { height: 65%; }
+.diagnostic-art-bars span:nth-child(3n) { height: 90%; }
+.diagnostic-art-bars span:nth-child(4n) { height: 48%; }
+.diagnostic-art-bars span:nth-child(5n) { height: 75%; }
+.diagnostic-art-bars span:nth-child(7n) { height: 100%; }
+
+.diagnostic-art-stamp {
+  position: absolute;
+  z-index: 3;
+  right: 1%;
+  bottom: 11%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 94px;
+  border: 1px solid rgba(187,138,82,.75);
+  border-radius: 50%;
+  background: var(--diag-gold);
+  color: var(--diag-forest);
+  box-shadow: 0 12px 30px rgba(0,0,0,.2);
+  transform: rotate(-12deg);
+}
+
+.diagnostic-art-stamp span {
+  font-family: Georgia, serif;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.diagnostic-art-stamp small {
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.diagnostic-hero-index {
+  position: absolute;
+  right: max(7%, calc((100vw - 1250px) / 2));
+  bottom: 27px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: rgba(248,246,240,.46);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.diagnostic-hero-index span:first-child {
+  color: var(--diag-gold);
+  font-family: Georgia, serif;
+  font-size: 17px;
+}
+
+/* =========================================
+   INTRODUCCIÓN DEL FORMULARIO
+========================================= */
 
 .diagnostic-form-section {
-  padding: 100px 22px;
-  background: var(--diag-cream);
+  position: relative;
+  padding: 100px 24px 110px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 0% 20%, rgba(109,151,115,.11), transparent 33%),
+    radial-gradient(ellipse at 100% 75%, rgba(187,138,82,.1), transparent 32%),
+    var(--diag-cream);
 }
 
 .diagnostic-section-heading {
-  max-width: 720px;
-  margin: 0 auto 42px;
+  max-width: 790px;
+  margin: 0 auto 55px;
   text-align: center;
 }
 
+.diagnostic-section-heading .diagnostic-eyebrow {
+  justify-content: center;
+}
+
 .diagnostic-section-heading h2 {
-  margin: 16px 0;
+  margin: 19px 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-size: clamp(38px, 4.4vw, 55px);
   font-weight: 400;
-  letter-spacing: -0.045em;
+  letter-spacing: -.055em;
   line-height: 1.12;
   color: var(--diag-forest);
 }
 
 .diagnostic-section-heading p {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
   color: var(--diag-muted);
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.85;
 }
 
-/* ========================================
-   TARJETA DEL FORMULARIO
-======================================== */
+/* =========================================
+   NUEVA ESTRUCTURA: NAVEGACIÓN + FORMULARIO
+========================================= */
 
-.diagnostic-card {
-  max-width: 790px;
+.diagnostic-workspace {
+  display: grid;
+  grid-template-columns: 275px minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: clamp(22px, 5vw, 48px);
-  border: 1px solid var(--diag-line);
-  border-radius: 12px;
-  background: var(--diag-white);
-  box-shadow: 0 22px 70px rgba(12, 59, 46, 0.07);
 }
 
-.diagnostic-progress-header {
+/* Columna de recorrido */
+
+.diagnostic-journey {
+  position: sticky;
+  top: 30px;
+  padding: 28px 22px;
+  border: 1px solid rgba(12,59,46,.1);
+  border-radius: 5px;
+  background: #EDF1E9;
+}
+
+.diagnostic-journey-heading {
+  padding: 0 4px 24px;
+  border-bottom: 1px solid rgba(12,59,46,.12);
+}
+
+.diagnostic-journey-kicker {
+  color: var(--diag-sage);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+
+.diagnostic-journey-heading h3 {
+  margin: 12px 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+}
+
+.diagnostic-journey-heading p {
+  margin: 0;
+  color: var(--diag-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.diagnostic-journey-list {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  padding: 21px 0;
+}
+
+.diagnostic-journey-list::before {
+  content: "";
+  position: absolute;
+  top: 39px;
+  bottom: 39px;
+  left: 19px;
+  width: 1px;
+  background: #CBD8C9;
+}
+
+.diagnostic-journey-item {
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
-  color: var(--diag-forest);
-  font-size: 0.85rem;
+  align-items: center;
+  gap: 13px;
+  min-height: 65px;
+  padding: 9px 7px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.diagnostic-journey-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  flex: 0 0 39px;
+  width: 39px;
+  height: 39px;
+  border: 1px solid #C8D4C6;
+  border-radius: 50%;
+  background: #EDF1E9;
+  color: #738276;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background .2s ease, color .2s ease;
+}
+
+.diagnostic-journey-copy {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.diagnostic-journey-copy strong {
+  color: #68776B;
+  font-size: 12px;
   font-weight: 750;
 }
+
+.diagnostic-journey-copy small {
+  color: #849087;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.diagnostic-journey-item.is-active {
+  border-color: rgba(109,151,115,.28);
+  background: rgba(255,255,255,.75);
+}
+
+.diagnostic-journey-item.is-active .diagnostic-journey-number {
+  border-color: var(--diag-forest);
+  background: var(--diag-forest);
+  color: white;
+}
+
+.diagnostic-journey-item.is-active .diagnostic-journey-copy strong {
+  color: var(--diag-forest);
+}
+
+.diagnostic-journey-item.is-complete .diagnostic-journey-number {
+  border-color: var(--diag-sage);
+  background: var(--diag-sage);
+  color: white;
+}
+
+.diagnostic-journey-item.is-complete .diagnostic-journey-copy strong {
+  color: var(--diag-forest);
+}
+
+.diagnostic-journey-dot {
+  width: 7px;
+  height: 7px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: var(--diag-gold);
+}
+
+.diagnostic-journey-foot {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(12,59,46,.12);
+}
+
+.diagnostic-journey-foot-icon {
+  color: var(--diag-gold);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.diagnostic-journey-foot p {
+  margin: 0;
+  color: var(--diag-muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL DEL FORMULARIO
+========================================= */
+
+.diagnostic-main {
+  min-width: 0;
+}
+
+.diagnostic-card {
+  position: relative;
+  padding: 36px clamp(25px, 4vw, 48px) 31px;
+  border: 1px solid rgba(12,59,46,.1);
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 22px 65px rgba(12,59,46,.07);
+}
+
+.diagnostic-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.diagnostic-card-top > div:first-child {
+  display: grid;
+  gap: 7px;
+}
+
+.diagnostic-card-label {
+  color: var(--diag-sage);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+.diagnostic-card-step {
+  color: var(--diag-forest);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.diagnostic-card-count {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  color: #A0AA9F;
+  white-space: nowrap;
+}
+
+.diagnostic-card-count strong {
+  color: var(--diag-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: -.06em;
+}
+
+.diagnostic-card-count span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* =========================================
+   PROGRESO
+========================================= */
 
 .diagnostic-progress-track {
   height: 5px;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   background: var(--diag-pale);
 }
 
@@ -320,134 +674,209 @@
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: var(--diag-sage);
-  transition: width 220ms ease;
+  background: linear-gradient(90deg, var(--diag-sage), var(--diag-gold));
+  transition: width .4s ease;
 }
 
-/* ========================================
-   PASOS Y PREGUNTAS
-======================================== */
+/* =========================================
+   CONTENIDO DE CADA PASO
+========================================= */
 
 .diagnostic-step {
-  padding: 38px 0 28px;
+  padding: 39px 0 35px;
+  animation: diagnostic-enter .35s ease both;
+}
+
+@keyframes diagnostic-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diagnostic-step-kicker {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--diag-gold);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
 }
 
 .diagnostic-step h3,
 .diagnostic-complete h3 {
-  margin: 0 0 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.7rem, 4vw, 2.25rem);
-  font-weight: 400;
-  letter-spacing: -0.035em;
+  margin: 0 0 12px;
   color: var(--diag-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(31px, 3.5vw, 40px);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  line-height: 1.15;
 }
 
 .diagnostic-step > p,
 .diagnostic-complete > p {
+  margin: 0;
   color: var(--diag-muted);
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.8;
 }
+
+/* =========================================
+   OPCIONES COMO TARJETAS
+========================================= */
 
 .diagnostic-options {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 11px;
-  margin-top: 26px;
+  margin-top: 29px;
 }
 
 .diagnostic-option {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr) 25px;
   align-items: center;
-  gap: 13px;
+  gap: 10px;
   width: 100%;
-  min-height: 57px;
-  padding: 15px 17px;
-  border: 1px solid var(--diag-line);
-  border-radius: 6px;
-  background: var(--diag-white);
+  min-height: 78px;
+  padding: 14px 13px;
+  border: 1px solid #E0E7DF;
+  border-radius: 4px;
+  background: #FCFDFB;
   color: var(--diag-forest);
-  font: inherit;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.55;
   text-align: left;
-  line-height: 1.5;
   cursor: pointer;
   transition:
-    border-color 160ms ease,
-    background 160ms ease,
-    box-shadow 160ms ease;
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
 }
 
-.diagnostic-option:hover,
-.diagnostic-option.is-selected {
+.diagnostic-option:hover {
+  transform: translateY(-2px);
   border-color: var(--diag-sage);
-  background: var(--diag-soft);
+  background: #F3F7F1;
+  box-shadow: 0 8px 18px rgba(12,59,46,.06);
 }
 
 .diagnostic-option.is-selected {
-  box-shadow: inset 3px 0 var(--diag-sage);
+  border-color: var(--diag-forest);
+  background: #EDF3EA;
+  box-shadow: inset 3px 0 var(--diag-gold);
 }
 
-.diagnostic-option-radio {
-  flex: 0 0 17px;
-  width: 17px;
-  height: 17px;
-  border: 1px solid var(--diag-muted);
+.diagnostic-option-index {
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border: 1px solid #E0E7DF;
   border-radius: 50%;
+  color: #879589;
+  font-size: 9px;
+  font-weight: 800;
+  transition: all .2s ease;
 }
 
-.diagnostic-option.is-selected .diagnostic-option-radio {
-  border: 5px solid var(--diag-forest);
+.diagnostic-option.is-selected .diagnostic-option-index {
+  border-color: var(--diag-forest);
+  background: var(--diag-forest);
+  color: white;
 }
 
-/* ========================================
-   CAMPOS DE CONTACTO
-======================================== */
+.diagnostic-option-text {
+  min-width: 0;
+}
+
+.diagnostic-option-check {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #DCE5DA;
+  border-radius: 50%;
+  color: #829184;
+  font-size: 12px;
+  transition: all .2s ease;
+}
+
+.diagnostic-option.is-selected .diagnostic-option-check {
+  border-color: var(--diag-gold);
+  background: var(--diag-gold);
+  color: var(--diag-forest);
+}
+
+/* =========================================
+   DATOS DE CONTACTO
+========================================= */
 
 .diagnostic-fields {
   display: grid;
-  gap: 19px;
-  margin-top: 26px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 21px 17px;
+  margin-top: 29px;
 }
 
 .diagnostic-fields label {
   display: grid;
-  gap: 8px;
+  align-content: start;
+  gap: 9px;
   color: var(--diag-forest);
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.diagnostic-fields label:last-child {
+  grid-column: 1 / -1;
 }
 
 .diagnostic-fields input,
 .diagnostic-fields textarea {
   width: 100%;
-  min-height: 49px;
-  padding: 13px 14px;
-  border: 1px solid var(--diag-line);
-  border-radius: 5px;
-  background: var(--diag-white);
+  min-height: 53px;
+  padding: 14px 15px;
+  border: 1px solid #DCE5DA;
+  border-radius: 4px;
+  outline: none;
+  background: #FCFDFB;
   color: var(--diag-forest);
-  font: inherit;
+  font-family: inherit;
+  font-size: 15px;
   font-weight: 400;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .diagnostic-fields textarea {
+  min-height: 120px;
   resize: vertical;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .diagnostic-fields input::placeholder,
 .diagnostic-fields textarea::placeholder {
-  color: #829084;
+  color: #99A49A;
 }
 
 .diagnostic-fields input:focus,
 .diagnostic-fields textarea:focus {
-  outline: 2px solid rgba(109, 151, 115, 0.28);
-  outline-offset: 1px;
   border-color: var(--diag-sage);
+  box-shadow: 0 0 0 3px rgba(109,151,115,.13);
 }
 
-/* ========================================
-   BOTONES DEL FORMULARIO
-======================================== */
+/* =========================================
+   BOTONES
+========================================= */
 
 .diagnostic-actions {
   display: flex;
@@ -456,35 +885,42 @@
   flex-wrap: wrap;
   gap: 12px;
   padding-top: 23px;
-  border-top: 1px solid var(--diag-line);
+  border-top: 1px solid #E7ECE5;
 }
 
 .diagnostic-next,
 .diagnostic-back {
-  min-height: 48px;
-  padding: 13px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  min-height: 53px;
+  padding: 14px 21px;
   border: 1px solid var(--diag-forest);
-  border-radius: 4px;
-  font: inherit;
-  font-weight: 750;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
   cursor: pointer;
-  transition:
-    transform 160ms ease,
-    background 160ms ease,
-    border-color 160ms ease;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
 .diagnostic-next {
   margin-left: auto;
   background: var(--diag-forest);
-  color: var(--diag-white);
+  color: white;
 }
 
 .diagnostic-next:hover {
-  transform: translateY(-1px);
-  border-color: var(--diag-sage);
+  transform: translateY(-2px);
   background: var(--diag-sage);
+  border-color: var(--diag-sage);
   color: var(--diag-forest);
+  box-shadow: 0 8px 20px rgba(12,59,46,.12);
+}
+
+.diagnostic-next span {
+  font-size: 18px;
 }
 
 .diagnostic-back {
@@ -493,646 +929,453 @@
 }
 
 .diagnostic-back:hover {
-  border-color: var(--diag-sage);
   background: var(--diag-soft);
+  border-color: var(--diag-sage);
 }
 
-/* ========================================
-   MENSAJES DE ERROR
-======================================== */
+.diagnostic-whatsapp {
+  border-color: var(--diag-gold);
+  background: var(--diag-gold);
+  color: var(--diag-forest);
+}
+
+.diagnostic-whatsapp:hover {
+  border-color: #D0A36E;
+  background: #D0A36E;
+  color: var(--diag-forest);
+}
+
+/* =========================================
+   ERROR
+========================================= */
 
 .diagnostic-error {
-  margin: 20px 0;
+  margin: 18px 0;
   padding: 13px 15px;
-  border-left: 3px solid var(--diag-sage);
-  border-radius: 0 5px 5px 0;
-  background: var(--diag-soft);
-  color: var(--diag-forest);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  border-left: 3px solid var(--diag-gold);
+  background: #FBF4EA;
+  color: #76532F;
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-/* ========================================
+/* =========================================
    RESUMEN FINAL
-======================================== */
+========================================= */
 
 .diagnostic-complete {
-  padding: 38px 0 28px;
+  padding: 35px 0 30px;
+  animation: diagnostic-enter .35s ease both;
+}
+
+.diagnostic-complete-heading {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-bottom: 20px;
 }
 
 .diagnostic-complete-icon {
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
-  margin-bottom: 22px;
+  flex: 0 0 55px;
+  width: 55px;
+  height: 55px;
+  border: 1px solid rgba(109,151,115,.35);
   border-radius: 50%;
   background: var(--diag-pale);
   color: var(--diag-forest);
-  font-size: 1.4rem;
+  font-size: 25px;
+}
+
+.diagnostic-complete-heading .diagnostic-step-kicker {
+  margin-bottom: 7px;
+}
+
+.diagnostic-complete-heading h3 {
+  margin: 0;
+  font-size: clamp(25px, 3vw, 34px);
 }
 
 .diagnostic-summary {
-  margin: 24px 0;
-  padding: 20px;
-  border: 1px solid var(--diag-line);
-  border-radius: 7px;
-  background: var(--diag-soft);
+  margin: 27px 0 22px;
+  border: 1px solid #DDE6DA;
+  border-radius: 4px;
+  background: #FAFCF9;
+  overflow: hidden;
+}
+
+.diagnostic-summary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px 19px;
+  border-bottom: 1px solid #DDE6DA;
+  background: #EDF3EA;
+  color: var(--diag-forest);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.diagnostic-summary-heading span:last-child {
+  color: var(--diag-sage);
+  font-size: 13px;
+}
+
+.diagnostic-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.diagnostic-summary-grid > div {
+  min-width: 0;
+  padding: 17px 19px;
+  border-bottom: 1px solid #E7ECE5;
   overflow-wrap: anywhere;
 }
 
-.diagnostic-summary p {
-  margin: 9px 0;
-  color: var(--diag-text);
+.diagnostic-summary-grid > div:nth-child(odd) {
+  border-right: 1px solid #E7ECE5;
+}
+
+.diagnostic-summary-grid small {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--diag-sage);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.diagnostic-summary-grid p {
+  margin: 0;
+  color: var(--diag-forest);
+  font-size: 13px;
   line-height: 1.65;
 }
 
-.diagnostic-disclaimer,
-.diagnostic-privacy-note {
+.diagnostic-disclaimer {
   color: var(--diag-muted);
-  font-size: 0.82rem;
-  line-height: 1.75;
+  font-size: 12px;
+  line-height: 1.8;
 }
 
 .diagnostic-privacy-note {
-  max-width: 650px;
-  margin: 24px auto 0;
+  max-width: 680px;
+  margin: 22px auto 0;
+  color: var(--diag-muted);
+  font-size: 12px;
+  line-height: 1.8;
   text-align: center;
 }
 
-/* ========================================
+/* =========================================
    FOOTER
-======================================== */
+========================================= */
 
 .diagnostic-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 27px max(7%, calc((100vw - 1200px) / 2));
-  background: var(--diag-pale);
-  color: var(--diag-muted);
-  font-size: 0.82rem;
+  gap: 20px;
+  padding: 29px max(7%, calc((100vw - 1250px) / 2));
+  background: var(--diag-forest);
+  color: rgba(248,246,240,.7);
+  font-size: 13px;
 }
 
 .diagnostic-footer-brand {
-  color: var(--diag-forest);
-  font-size: 0.9rem;
-  font-weight: 850;
-  letter-spacing: 0.13em;
+  color: var(--diag-cream);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: .15em;
   text-decoration: none;
 }
 
-/* ========================================
-   TABLETAS
-======================================== */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (min-width: 761px) and (max-width: 1050px) {
   .diagnostic-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(290px, 0.85fr);
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .8fr);
+    gap: 35px;
     padding-right: 5%;
     padding-left: 5%;
   }
 
   .diagnostic-hero h1 {
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(49px, 5.8vw, 64px);
   }
 
-  .diagnostic-visual {
-    min-height: 420px;
+  .diagnostic-art-main {
+    width: 82%;
+    min-height: 320px;
     padding: 27px;
   }
 
-  .diagnostic-visual h2 {
-    font-size: 2.15rem;
+  .diagnostic-art-main h2 {
+    font-size: 35px;
+  }
+
+  .diagnostic-workspace {
+    grid-template-columns: 225px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .diagnostic-journey {
+    padding: 23px 15px;
+  }
+
+  .diagnostic-journey-copy strong {
+    font-size: 11px;
+  }
+
+  .diagnostic-option {
+    grid-template-columns: 27px minmax(0, 1fr) 22px;
+    gap: 8px;
+    padding: 12px 9px;
+    font-size: 12px;
   }
 }
 
-/* ========================================
-   MÓVILES
-======================================== */
+/* =========================================
+   MÓVIL
+========================================= */
 
 @media (max-width: 760px) {
   .diagnostic-hero {
     grid-template-columns: minmax(0, 1fr);
-    gap: 39px;
+    gap: 38px;
     min-height: auto;
-    padding: 62px 23px 45px;
+    padding: 62px 23px 75px;
   }
 
-  .diagnostic-hero::before {
-    top: -190px;
-    left: 25%;
-    width: 350px;
-    height: 350px;
-  }
-
-  .diagnostic-hero::after {
-    right: -220px;
-    bottom: -160px;
-    width: 330px;
-    height: 330px;
-  }
-
-  .diagnostic-hero-inner {
-    max-width: 560px;
+  .diagnostic-hero-pattern {
+    background-size: 48px 48px;
   }
 
   .diagnostic-hero h1 {
-    margin: 23px 0 20px;
-    font-size: clamp(2.8rem, 10.5vw, 4rem);
-    letter-spacing: -0.055em;
-    line-height: 1.04;
+    margin: 23px 0 19px;
+    font-size: clamp(43px, 10vw, 61px);
+    line-height: 1.06;
   }
 
   .diagnostic-hero-inner > p {
-    font-size: 0.96rem;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.85;
   }
 
   .diagnostic-hero-button {
-    gap: 22px;
-    margin-top: 24px;
-  }
-
-  .diagnostic-note {
-    margin-top: 18px;
-  }
-
-  .diagnostic-visual {
-    justify-self: stretch;
-    width: 100%;
-    max-width: none;
-    min-height: 390px;
-    padding: 26px 22px;
-  }
-
-  .diagnostic-visual-line {
-    margin: 20px 0 26px;
-  }
-
-  .diagnostic-visual h2 {
-    font-size: clamp(2rem, 8vw, 2.55rem);
-  }
-
-  .diagnostic-visual-items > div {
     min-height: 55px;
-    font-size: 0.85rem;
-  }
-
-  .diagnostic-form-section {
-    padding: 72px 16px;
-  }
-
-  .diagnostic-section-heading {
-    margin-bottom: 30px;
-  }
-
-  .diagnostic-section-heading h2 {
-    font-size: clamp(2rem, 7.5vw, 2.8rem);
-  }
-
-  .diagnostic-card {
-    padding: 22px 17px;
-  }
-
-  .diagnostic-step {
-    padding-top: 30px;
-  }
-
-  .diagnostic-progress-header {
-    font-size: 0.76rem;
-  }
-
-  .diagnostic-option {
-    padding: 13px;
-    font-size: 0.9rem;
-  }
-
-  .diagnostic-actions {
-    align-items: stretch;
-  }
-
-  .diagnostic-next,
-  .diagnostic-back {
-    flex: 1 1 auto;
-  }
-
-  .diagnostic-footer {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 25px 22px;
-  }
-}
-
-/* ========================================
-   MÓVILES PEQUEÑOS
-======================================== */
-
-@media (max-width: 380px) {
-  .diagnostic-hero {
-    padding-right: 18px;
-    padding-left: 18px;
-  }
-
-  .diagnostic-hero h1 {
-    font-size: 2.65rem;
-  }
-
-  .diagnostic-hero-button {
-    gap: 14px;
-    padding: 14px 15px;
-    font-size: 0.84rem;
-  }
-
-  .diagnostic-visual {
-    padding: 23px 17px;
-  }
-
-  .diagnostic-visual-top {
-    font-size: 0.59rem;
-  }
-
-  .diagnostic-visual-top span:last-child {
-    font-size: 0.64rem;
-  }
-
-  .diagnostic-card {
-    padding: 20px 14px;
-  }
-}
-
-/* ========================================
-   ACCESIBILIDAD
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  .diagnostic-page *,
-  .diagnostic-page *::before,
-  .diagnostic-page *::after {
-    scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition: none !important;
-  }
-}
-
-/* ========================================
-   AUMENTO GENERAL DE TIPOGRAFÍA
-======================================== */
-
-/* Etiquetas superiores */
-.diagnostic-eyebrow {
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-/* Título principal */
-.diagnostic-hero h1 {
-  font-size: clamp(54px, 5.5vw, 82px);
-  line-height: 1.06;
-}
-
-/* Descripción principal */
-.diagnostic-hero-inner > p {
-  font-size: 19px;
-  line-height: 1.8;
-}
-
-/* Botón principal */
-.diagnostic-hero-button {
-  min-height: 60px;
-  padding: 17px 24px;
-  font-size: 16px;
-}
-
-/* Nota informativa */
-.diagnostic-note {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* Tarjeta de análisis */
-.diagnostic-visual {
-  max-width: 490px;
-  padding: clamp(28px, 3vw, 42px);
-}
-
-.diagnostic-visual-top {
-  font-size: 13px;
-}
-
-.diagnostic-visual-top span:last-child {
-  font-size: 13px;
-}
-
-.diagnostic-visual-label {
-  font-size: 13px;
-}
-
-.diagnostic-visual h2 {
-  font-size: clamp(34px, 3.2vw, 44px);
-}
-
-.diagnostic-visual-items > div {
-  min-height: 64px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.diagnostic-visual-icon {
-  flex-basis: 36px;
-  width: 36px;
-  height: 36px;
-  font-size: 19px;
-}
-
-.diagnostic-visual-bottom {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* Encabezado de la sección del formulario */
-.diagnostic-section-heading h2 {
-  font-size: clamp(36px, 4vw, 52px);
-}
-
-.diagnostic-section-heading p {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-/* Tarjeta del formulario */
-.diagnostic-card {
-  max-width: 860px;
-  padding: clamp(28px, 4vw, 52px);
-}
-
-/* Progreso */
-.diagnostic-progress-header {
-  font-size: 15px;
-}
-
-/* Preguntas */
-.diagnostic-step h3,
-.diagnostic-complete h3 {
-  font-size: clamp(30px, 3.5vw, 38px);
-  line-height: 1.25;
-}
-
-.diagnostic-step > p,
-.diagnostic-complete > p {
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-/* Opciones de respuesta */
-.diagnostic-options {
-  gap: 12px;
-}
-
-.diagnostic-option {
-  min-height: 64px;
-  padding: 17px 20px;
-  gap: 15px;
-  font-size: 17px;
-  line-height: 1.6;
-}
-
-/* Indicador de selección */
-.diagnostic-option-radio {
-  flex-basis: 19px;
-  width: 19px;
-  height: 19px;
-}
-
-.diagnostic-option.is-selected .diagnostic-option-radio {
-  border-width: 5px;
-}
-
-/* Campos de contacto */
-.diagnostic-fields {
-  gap: 22px;
-}
-
-.diagnostic-fields label {
-  gap: 10px;
-  font-size: 16px;
-}
-
-.diagnostic-fields input,
-.diagnostic-fields textarea {
-  min-height: 56px;
-  padding: 15px 16px;
-  font-size: 16px;
-}
-
-.diagnostic-fields textarea {
-  min-height: 120px;
-}
-
-/* Botones para avanzar y regresar */
-.diagnostic-next,
-.diagnostic-back {
-  min-height: 56px;
-  padding: 15px 24px;
-  font-size: 16px;
-}
-
-/* Mensajes de error */
-.diagnostic-error {
-  font-size: 15px;
-  line-height: 1.75;
-}
-
-/* Resumen final */
-.diagnostic-complete-icon {
-  width: 52px;
-  height: 52px;
-  font-size: 24px;
-}
-
-.diagnostic-summary {
-  padding: 24px;
-}
-
-.diagnostic-summary p {
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.diagnostic-disclaimer,
-.diagnostic-privacy-note {
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-/* Footer propio de Diagnóstico, si se utiliza */
-.diagnostic-footer {
-  font-size: 14px;
-}
-
-.diagnostic-footer-brand {
-  font-size: 15px;
-}
-
-/* ========================================
-   AJUSTES PARA TABLETAS Y CELULARES
-======================================== */
-
-@media (max-width: 760px) {
-  .diagnostic-hero {
-    gap: 32px;
-    padding: 56px 24px 42px;
-  }
-
-  .diagnostic-eyebrow {
-    font-size: 12px;
-  }
-
-  .diagnostic-hero h1 {
-    font-size: clamp(42px, 9vw, 60px);
-    line-height: 1.08;
-  }
-
-  .diagnostic-hero-inner > p {
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .diagnostic-hero-button {
-    min-height: 56px;
-    font-size: 15px;
-  }
-
-  .diagnostic-note {
+    margin-top: 25px;
+    padding: 14px 17px;
     font-size: 14px;
   }
 
-  .diagnostic-visual {
-    max-width: none;
-    min-height: auto;
-    padding: 26px 22px;
-  }
-
-  .diagnostic-visual-top,
-  .diagnostic-visual-top span:last-child {
+  .diagnostic-note {
     font-size: 12px;
   }
 
-  .diagnostic-visual-label {
-    font-size: 12px;
+  .diagnostic-hero-art {
+    justify-self: center;
+    width: min(100%, 410px);
+    margin: 4px auto 10px;
   }
 
-  .diagnostic-visual h2 {
-    font-size: clamp(30px, 7vw, 38px);
+  .diagnostic-art-main {
+    width: 76%;
+    min-height: 300px;
+    padding: 25px;
+    transform: rotate(2deg);
   }
 
-  .diagnostic-visual-items > div {
-    min-height: 60px;
-    font-size: 15px;
+  .diagnostic-art-main h2 {
+    margin: 19px 0 26px;
+    font-size: clamp(31px, 8vw, 40px);
   }
 
-  .diagnostic-visual-bottom {
-    font-size: 13px;
+  .diagnostic-art-stamp {
+    right: 0;
+    bottom: 10%;
+    width: 76px;
+    height: 76px;
+  }
+
+  .diagnostic-art-stamp span {
+    font-size: 21px;
+  }
+
+  .diagnostic-art-stamp small {
+    font-size: 6px;
+  }
+
+  .diagnostic-hero-index {
+    right: 23px;
+    bottom: 22px;
+    font-size: 8px;
   }
 
   .diagnostic-form-section {
-    padding: 64px 18px;
+    padding: 72px 16px 75px;
   }
 
   .diagnostic-section-heading {
-    margin-bottom: 30px;
+    margin-bottom: 34px;
   }
 
   .diagnostic-section-heading h2 {
-    font-size: clamp(30px, 7vw, 40px);
+    font-size: clamp(32px, 8vw, 43px);
   }
 
   .diagnostic-section-heading p {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .diagnostic-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+  }
+
+  .diagnostic-journey {
+    position: static;
+    padding: 18px 16px;
+  }
+
+  .diagnostic-journey-heading {
+    padding-bottom: 14px;
+  }
+
+  .diagnostic-journey-heading h3 {
+    margin: 8px 0 5px;
+    font-size: 22px;
+  }
+
+  .diagnostic-journey-heading p {
+    font-size: 11px;
+  }
+
+  .diagnostic-journey-list {
+    display: flex;
+    gap: 0;
+    padding: 16px 0 10px;
+  }
+
+  .diagnostic-journey-list::before {
+    top: 31px;
+    right: 9%;
+    bottom: auto;
+    left: 9%;
+    width: auto;
+    height: 1px;
+  }
+
+  .diagnostic-journey-item {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    min-width: 0;
+    min-height: auto;
+    padding: 0 2px;
+    border: 0;
+    background: transparent;
+    text-align: center;
+  }
+
+  .diagnostic-journey-item.is-active {
+    border: 0;
+    background: transparent;
+  }
+
+  .diagnostic-journey-number {
+    flex: 0 0 31px;
+    width: 31px;
+    height: 31px;
+    background: #EDF1E9;
+    font-size: 9px;
+  }
+
+  .diagnostic-journey-copy {
+    gap: 0;
+  }
+
+  .diagnostic-journey-copy strong {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .diagnostic-journey-copy small {
+    display: none;
+  }
+
+  .diagnostic-journey-dot {
+    display: none;
+  }
+
+  .diagnostic-journey-foot {
+    padding-top: 12px;
+  }
+
+  .diagnostic-journey-foot p {
+    font-size: 10px;
   }
 
   .diagnostic-card {
-    padding: 24px 20px;
+    padding: 25px 19px 22px;
   }
 
-  .diagnostic-progress-header {
-    font-size: 13px;
+  .diagnostic-card-count strong {
+    font-size: 31px;
   }
 
   .diagnostic-step {
-    padding: 30px 0 24px;
+    padding: 32px 0 27px;
   }
 
-  .diagnostic-step h3,
-  .diagnostic-complete h3 {
-    font-size: clamp(27px, 6vw, 32px);
+  .diagnostic-step h3 {
+    font-size: clamp(28px, 7vw, 35px);
   }
 
-  .diagnostic-step > p,
-  .diagnostic-complete > p {
-    font-size: 16px;
+  .diagnostic-step > p {
+    font-size: 14px;
+  }
+
+  .diagnostic-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+    margin-top: 23px;
   }
 
   .diagnostic-option {
-    min-height: 60px;
-    padding: 15px;
-    font-size: 16px;
+    min-height: 64px;
+    grid-template-columns: 30px minmax(0, 1fr) 24px;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .diagnostic-fields {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    margin-top: 23px;
   }
 
   .diagnostic-fields label {
-    font-size: 15px;
+    font-size: 13px;
+  }
+
+  .diagnostic-fields label:last-child {
+    grid-column: auto;
   }
 
   .diagnostic-fields input,
   .diagnostic-fields textarea {
-    font-size: 16px;
-  }
-
-  .diagnostic-next,
-  .diagnostic-back {
     min-height: 52px;
-    padding: 13px 17px;
-    font-size: 15px;
-  }
-
-  .diagnostic-summary p {
-    font-size: 15px;
-  }
-
-  .diagnostic-disclaimer,
-  .diagnostic-privacy-note {
-    font-size: 13px;
-  }
-
-  .diagnostic-footer {
-    font-size: 13px;
-  }
-}
-
-/* ========================================
-   CELULARES PEQUEÑOS
-======================================== */
-
-@media (max-width: 380px) {
-  .diagnostic-hero h1 {
-    font-size: 39px;
-  }
-
-  .diagnostic-hero-inner > p {
     font-size: 16px;
-  }
-
-  .diagnostic-card {
-    padding: 21px 15px;
-  }
-
-  .diagnostic-option {
-    gap: 11px;
-    padding: 13px;
-    font-size: 15px;
   }
 
   .diagnostic-actions {
@@ -1141,8 +1384,122 @@
 
   .diagnostic-next,
   .diagnostic-back {
-    padding-inline: 12px;
-    font-size: 14px;
+    min-height: 50px;
+    padding: 12px 15px;
+    font-size: 12px;
+  }
+
+  .diagnostic-complete-heading {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .diagnostic-complete-icon {
+    flex-basis: 43px;
+    width: 43px;
+    height: 43px;
+    font-size: 20px;
+  }
+
+  .diagnostic-complete-heading h3 {
+    font-size: 27px;
+  }
+
+  .diagnostic-summary-grid > div {
+    padding: 14px 12px;
+  }
+
+  .diagnostic-summary-grid p {
+    font-size: 12px;
+  }
+
+  .diagnostic-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 26px 23px;
   }
 }
 
+/* =========================================
+   MÓVIL PEQUEÑO
+========================================= */
+
+@media (max-width: 380px) {
+  .diagnostic-hero {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .diagnostic-hero h1 {
+    font-size: 41px;
+  }
+
+  .diagnostic-art-main {
+    min-height: 270px;
+    padding: 20px;
+  }
+
+  .diagnostic-art-main h2 {
+    font-size: 30px;
+  }
+
+  .diagnostic-art-caption {
+    font-size: 8px;
+  }
+
+  .diagnostic-journey {
+    padding: 15px 10px;
+  }
+
+  .diagnostic-journey-copy strong {
+    font-size: 8px;
+  }
+
+  .diagnostic-card {
+    padding: 22px 14px;
+  }
+
+  .diagnostic-card-step {
+    font-size: 12px;
+  }
+
+  .diagnostic-option {
+    gap: 8px;
+    padding: 11px 9px;
+    font-size: 12px;
+  }
+
+  .diagnostic-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .diagnostic-next,
+  .diagnostic-back {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .diagnostic-summary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .diagnostic-summary-grid > div:nth-child(odd) {
+    border-right: 0;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .diagnostic-page *,
+  .diagnostic-page *::before,
+  .diagnostic-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition: none !important;
+  }
+}
